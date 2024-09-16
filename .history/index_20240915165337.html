@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>IA VIGILÂNCIA</title>
+  <link rel="stylesheet" href="assets/style/style.css">
+</head>
+<body>
+  <nav>
+  </nav>
+  <header class="search">
+    <h1 class="black-ops-one-regular">VIGIA</h1>
+    <h2 class="black-ops-one-regular">Agavos, Doenças e Sintomas</h2>
+    <div class="grupos-sintomas">
+      <div><div class="grupo-sintoma"><img src="/assets/img/grupos/neurologico.png" alt=""></div><div class="nome-grupo, electrolize-regular">Neurológico</div></div>
+      <div><div class="grupo-sintoma"><img src="assets/img/grupos/respiratorio.png" alt=""></div><div class="nome-grupo electrolize-regular">Respiratório</div></div>
+      <div><div class="grupo-sintoma"><img src="assets/img/grupos/digestivo.png" alt=""></div><div class="nome-grupo electrolize-regular">Digestivo</div></div>
+      <div><div class="grupo-sintoma"><img src="assets/img/grupos/musculoesqueletico.png" alt=""></div><div class="nome-grupo electrolize-regular">Musculo- esquelético</div></div>
+      <div><div class="grupo-sintoma"><img src="assets/img/grupos/cardiaco.png" alt=""></div><div class="nome-grupo electrolize-regular">Cardiacos e Circulatórios</div></div>
+      <div><div class="grupo-sintoma"><img src="assets/img/grupos/dermatologico.png" alt=""></div><div class="nome-grupo electrolize-regular">Dermatológico</div></div>
+      <div><div class="grupo-sintoma"><img src="assets/img/grupos/infecciosofebril.png" alt=""></div><div class="nome-grupo electrolize-regular">Infeccioso e Febril</div></div>
+      <div><div class="grupo-sintoma"><img src="assets/img/grupos/ginecologicocongentia.png" alt=""></div><div class="nome-grupo electrolize-regular">Ginecológico e Congênito</div></div>
+      <div><div class="grupo-sintoma"><img src="assets/img/grupos/gerais.png" alt=""></div><div>Gerais</div></div>
+    </div><br>
+    <input type="text" placeholder="Pesquise por sintomas" class="electrolize-regular" id="campo-pesquisa">
+    <button onclick="pesquisar()">Pesquisar</button>
+    <br>
+    <div id="resultados-pesquisa" class="resultado-pesquisa-sintomas"></div>
+  </header>
+  <main> 
+    <center><h3>Sintomas Escolhidos</h3></center>
+    <div id="sintomas-escolhidos">
+
+      <!-- Sintomas escolhidos serão exibidos aqui -->
+    </div>
+    <div id="resultados-doencas">
+      <!-- Resultados das doenças serão exibidos aqui -->
+    </div>
+  </main>
+  <footer>
+    <p>&copy; 2023 Meu Site. Todos os direitos reservados.</p>
+  </footer>
+
+  <script src="assets/script/sintomas.js"></script>
+  <script src="assets/script/data.js"></script>
+  <script src="assets/script/app.js"></script>
+</body>
+</html>

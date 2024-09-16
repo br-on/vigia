@@ -1,0 +1,328 @@
+/* style.css */
+@import url('https://fonts.googleapis.com/css2?family=Black+Ops+One&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Electrolize&display=swap');
+
+.black-ops-one-regular {
+  font-family: "Black Ops One", system-ui;
+  font-weight: 400;
+  font-style: normal;
+}
+
+.electrolize-regular {
+  font-family: "Electrolize", sans-serif;
+  font-weight: 600;
+  font-style: normal;
+}
+
+/* Estilos globais */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+html, body {
+    height: 100%;
+    margin: 0;
+}
+
+body {
+    font-family: Arial, sans-serif;
+    line-height: 1.6;
+    margin: 0;
+    padding: 0;
+
+}
+
+header, nav, footer {
+    background-color: #333;
+    color: #fff;
+    text-align: center;
+    padding: 1rem;
+}
+
+main {
+    flex: 1;
+}
+
+h1, h2 {
+    color: #66ffcc;
+    margin-bottom: 1rem;
+}
+
+/* Estilo para o formulário de pesquisa */
+.search {
+    text-align: center;
+    padding: 2rem 1rem;
+    background-color: #117383;
+}
+
+.search input[type="text"] {
+    margin-top: 15px;
+    width: 600px;
+    padding: 0.75rem;
+    margin-bottom: 1rem;
+    border: 1px solid #ccc;
+    border-radius: 5px;
+    font-size: 1rem;
+}
+
+.search button {
+    padding: 0.75rem 2rem;
+    background-color: #66ffcc;
+    color: #000;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    font-size: 1rem;
+}
+
+.search button:hover {
+    background-color: #29a67c;
+    color: rgb(255, 255, 255);
+}
+
+/* Estilo para resultados */
+.results {
+    padding: 2rem;
+    background-color: #fff;
+    text-align: center;
+}
+
+/* Estilo do rodapé */
+
+footer {
+    background-color: #333;
+    color: white;
+    padding: 1rem;
+    text-align: center;
+    position: relative;
+    bottom: 0;
+    width: 100%;
+}
+
+/* Media Queries para telas menores */
+@media (max-width: 768px) {
+    .search input[type="text"] {
+        width: 100%;
+    }
+
+    .search button {
+        width: 100%;
+        margin-top: 1rem;
+    }
+}
+
+@media (max-width: 480px) {
+    h1 {
+        font-size: 2rem;
+    }
+
+    h2 {
+        font-size: 1.5rem;
+    }
+
+    footer {
+        font-size: 0.9rem;
+    }
+}
+
+/* Container principal dos resultados */
+#resultados-pesquisa {
+    
+    max-height: 80vh; /* Limita a altura para que os resultados não ocupem a tela inteira */
+    overflow-y: auto; /* Ativa a barra de rolagem vertical */
+    padding: 20px;
+    margin-top: 20px;
+    border-radius: 8px;
+    box-shadow: 0px 4px 10px rgba(0, 0, 0, 0.1); /* Sombra suave */
+    background-color: #f9f9f9; /* Fundo claro */
+}
+
+/* Estilo dos itens de resultado */
+.item-resultado {
+    border: 1px solid #e0e0e0; /* Borda leve ao redor do item */
+    border-radius: 8px; /* Bordas arredondadas */
+    padding: 20px; /* Espaçamento interno */
+    margin-bottom: 20px; /* Espaçamento entre os itens */
+    background-color: #fff; /* Fundo branco para o item */
+    box-shadow: 0px 4px 8px rgba(0, 0, 0, 0.05); /* Sombra leve */
+    transition: transform 0.3s ease, box-shadow 0.3s ease; /* Transição suave */
+}
+
+/* Efeito hover nos itens */
+.item-resultado:hover {
+    transform: translateY(-5px); /* Eleva o item ao passar o mouse */
+    box-shadow: 0px 6px 12px rgba(0, 0, 0, 0.15); /* Aumenta a sombra ao passar o mouse */
+}
+
+/* Título do item */
+.item-resultado h2 {
+    font-size: 1.8rem;
+    margin-bottom: 10px;
+    color: #333; /* Cor mais escura para o título */
+    font-weight: bold;
+}
+
+/* Subtítulos (Descrição, Sintomas, etc.) */
+.item-resultado h4 {
+    font-size: 1.2rem;
+    margin-top: 15px;
+    margin-bottom: 8px;
+    color: #555; /* Cor intermediária */
+}
+
+/* Texto descritivo */
+.item-resultado .descricao-meta {
+    font-size: 1rem;
+    line-height: 1.5; /* Facilita a leitura */
+    color: #666; /* Cor do texto */
+    margin-bottom: 15px;
+}
+
+/* Links */
+.item-resultado a {
+    font-size: 1rem;
+    color: #007bff; /* Cor azul padrão */
+    text-decoration: none;
+}
+
+.item-resultado a:hover {
+    text-decoration: underline; /* Sublinha ao passar o mouse */
+}
+
+/* Barra de rolagem estilizada */
+#resultados-pesquisa::-webkit-scrollbar {
+    width: 8px;
+}
+
+#resultados-pesquisa::-webkit-scrollbar-thumb {
+    background-color: #888;
+    border-radius: 10px;
+}
+
+#resultados-pesquisa::-webkit-scrollbar-thumb:hover {
+    background-color: #555;
+}
+
+
+/* Adicione isto ao seu arquivo CSS */
+#filtros-sintomas {
+    width: 90%;
+    margin: 0 auto; /* Centraliza a div horizontalmente */
+    display: flex;
+    flex-wrap: wrap; /* Faz com que os itens quebrem para a linha seguinte */
+    gap: 10px; /* Espaço entre os itens */
+    box-sizing: border-box;
+}
+
+#filtros-sintomas label {
+    display: flex;
+    align-items: center;
+    margin-right: 10px; /* Espaço entre os labels */
+    
+}
+
+
+.sintoma-item {
+    padding: 10px;
+    margin: 5px 0;
+    border-radius: 5px;
+    cursor: pointer;
+    margin: 2px;
+}
+
+.sintoma-item:hover {
+    opacity: 0.8;
+}
+
+#sintomas-escolhidos {
+    display: inline-flex;
+    flex-wrap: wrap;
+    margin-top: 20px;
+}
+
+.sintoma-escolhido {
+    background-color: #d4edda; /* Cor de fundo verde clara */
+    border: 1px solid #c3e6cb;
+    padding: 10px;
+    margin: 5px 0;
+    border-radius: 5px;
+}
+
+.resultado-pesquisa-sintomas {
+    display: inline-flex;
+    flex-wrap: wrap;
+    align-items: center;
+    justify-content: center;
+}
+
+.grupos-sintomas {
+    display: inline-flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    align-items: flex-start;
+    min-height: 150px;
+    gap: 5px;
+    margin-bottom: 15px;
+}
+
+.grupo:hover {
+    cursor: pointer;
+    .nome-grupo {
+        margin-top: 18px;
+        background-color: hsl(29, 100%, 42%);
+    }
+    .grupo-sintoma {
+        height: 90px;
+        width: 90px;
+        transition: 0.5s;
+        cursor: pointer;
+        border-radius: 50%;
+        background-color: hsl(29, 100%, 42%);   
+    }
+  }
+.grupo-sintoma {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    margin: 5px;
+    width: 100px;
+    height: 100px;
+    border-radius: 18px;
+    border: solid 2.5px #66ffcc;
+}
+
+.grupo-sintoma img {
+    width: 90px;
+    height: 90px;
+}
+
+.grupo-sintoma img:hover {
+    height: 130px;
+    width: 130px;
+    transition: 0.5s;
+    cursor: pointer;
+}
+
+.nome-grupo {
+    max-width: 110px;
+    font-size: 1em;
+    color: #66ffcc;
+    line-height: 1.5;
+
+}
+
+
+/* background-color dos nomes dos grupos */
+    .eurologicos { #FE9900" } 
+    respiratorios: "#26B63E", 
+    digestivos: "#060270", 
+    musculoesqueleticos: "#8D6F64",
+    "cardiacos-circulatorios": "#D20103", 
+    dermatologicos: "#DBB004", 
+    "infecciosos-febris": "#4419AA",
+    "ginecologicos-congenitos": "#CC6CE7",
+    "sistemicos-gerais": "#2B5D9C" 
+
+  
