@@ -2,79 +2,58 @@ document.addEventListener('DOMContentLoaded', function () {
     // Carregar sintomas iniciais (se necessário)
 });
 
-
-// Função para exibir a overlay-div e mostrar os sintomas do grupo
+// Função para exibir os sintomas ao clicar em um grupo
 function exibirSintomasPorGrupo(grupoId) {
-    const overlayDiv = document.querySelector('.overlay-div');
-    const resultadosSintomasDiv = document.getElementById("resultados-pesquisa-grupo");
-    const top2Div = document.querySelector('.top-2');
-    const grupoDiv = document.getElementById(grupoId);
+    // Encontre a div de sintomas (sintomas-grupo)
+    const sintomasGrupoDiv = document.querySelector('.sintomas-grupo');
+    
+    // Limpe o conteúdo anterior de sintomas
+    sintomasGrupoDiv.innerHTML = '';
 
-    // Limpa resultados anteriores
-    resultadosSintomasDiv.innerHTML = "";
+    // Procure o grupo correspondente no objeto dataSintomas
+    const grupoSintomas = dataSintomas.find(grupo => grupo.grupoId === grupoId);
 
-    // Obter sintomas já escolhidos
-    const sintomasEscolhidos = Array.from(document.getElementById("sintomas-escolhidos").children)
-        .map(div => div.textContent);
-
-    // Filtrar sintomas pelo grupo clicado e que não foram escolhidos
-    const sintomasEncontrados = dataSintomas.filter(sintoma => 
-        sintoma.grupo_sintoma.toLowerCase() === grupoId.toLowerCase() &&
-        !sintomasEscolhidos.includes(sintoma.titulo_sintoma)
-    );
-
-    if (sintomasEncontrados.length > 0) {
-        sintomasEncontrados.forEach(sintoma => {
-            const divSintoma = document.createElement('div');
-            divSintoma.className = 'sintoma-item';
-            divSintoma.style.backgroundColor = coresPorGrupo[grupoId.toLowerCase()] || '#ccc';
-            divSintoma.textContent = sintoma.titulo_sintoma;
-            divSintoma.addEventListener('click', () => adicionarSintomaEscolhido(sintoma, grupoId));
-            resultadosSintomasDiv.appendChild(divSintoma);
+    if (grupoSintomas) {
+        // Adicione cada sintoma do grupo na div sintomas-grupo
+        grupoSintomas.sintomas.forEach(sintoma => {
+            const sintomaDiv = document.createElement('div');
+            sintomaDiv.classList.add('sintoma');
+            sintomaDiv.textContent = sintoma;
+            sintomasGrupoDiv.appendChild(sintomaDiv);
         });
     } else {
-        resultadosSintomasDiv.innerHTML = '<p>Nenhum sintoma encontrado para este grupo.</p>';
+        // Exiba uma mensagem caso o grupo não tenha sintomas mapeados
+        sintomasGrupoDiv.textContent = 'Nenhum sintoma disponível para este grupo.';
     }
-
-    // Clona o conteúdo da div do grupo selecionado e insere na top-2
-    const grupoDivClone = grupoDiv.cloneNode(true);
-    top2Div.innerHTML = ''; // Limpa a top-2 antes de adicionar o clone
-    top2Div.appendChild(grupoDivClone);
-
-    // Exibe a overlay-div
-    overlayDiv.classList.remove('display-off');
-    overlayDiv.classList.add('display-on');
 }
 
-// Função para ocultar a overlay-div
-function ocultarOverlay() {
-    const overlayDiv = document.querySelector('.overlay-div');
-    overlayDiv.classList.remove('display-on');
-    overlayDiv.classList.add('display-off');
-}
 
-    // Função para configurar eventos de clique nos grupos e no botão Voltar
+// Função para configurar o clique nos grupos
 function configurarEventosDeCliqueNosGrupos() {
-    // Seleciona todas as divs de grupos de sintomas
     const grupos = document.querySelectorAll('.grupo');
 
-    // Adiciona o evento de clique para cada grupo
     grupos.forEach(grupo => {
         grupo.addEventListener('click', () => {
-            exibirSintomasPorGrupo(grupo.id); // Exibe sintomas ao clicar no grupo
+            // Chame a função para mover o grupo e exibir a overlay
+            moverGrupoParaTop2(grupo.id);
+
+            // Exibir sintomas do grupo
+            exibirSintomasPorGrupo(grupo.id);
+
+            // Exibir doenças relacionadas ao grupo
+            exibirDoencasPorGrupo(grupo.id);
         });
     });
 
-    // Adiciona evento de clique ao botão Voltar
-    const backButton = document.querySelector('.top-1 button');
-    backButton.addEventListener('click', () => {
-        ocultarOverlay();
+    // Evento para fechar a overlay
+    document.querySelector('.top-2').addEventListener('click', () => {
+        const overlayDiv = document.querySelector('.overlay-div');
+        overlayDiv.style.display = 'none'; // Esconder a overlay-div
     });
 }
 
-// Chama a função quando a página carrega
+// Chama essa função quando a página carrega
 window.onload = configurarEventosDeCliqueNosGrupos;
-
 
 // Função do botão pesquisar
 function pesquisar() {

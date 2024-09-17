@@ -7,9 +7,7 @@ document.addEventListener('DOMContentLoaded', function () {
 function exibirSintomasPorGrupo(grupoId) {
     const overlayDiv = document.querySelector('.overlay-div');
     const resultadosSintomasDiv = document.getElementById("resultados-pesquisa-grupo");
-    const top2Div = document.querySelector('.top-2');
-    const grupoDiv = document.getElementById(grupoId);
-
+    
     // Limpa resultados anteriores
     resultadosSintomasDiv.innerHTML = "";
 
@@ -36,11 +34,6 @@ function exibirSintomasPorGrupo(grupoId) {
         resultadosSintomasDiv.innerHTML = '<p>Nenhum sintoma encontrado para este grupo.</p>';
     }
 
-    // Clona o conteúdo da div do grupo selecionado e insere na top-2
-    const grupoDivClone = grupoDiv.cloneNode(true);
-    top2Div.innerHTML = ''; // Limpa a top-2 antes de adicionar o clone
-    top2Div.appendChild(grupoDivClone);
-
     // Exibe a overlay-div
     overlayDiv.classList.remove('display-off');
     overlayDiv.classList.add('display-on');
@@ -53,7 +46,7 @@ function ocultarOverlay() {
     overlayDiv.classList.add('display-off');
 }
 
-    // Função para configurar eventos de clique nos grupos e no botão Voltar
+// Função para configurar eventos de clique nos grupos e no botão Voltar
 function configurarEventosDeCliqueNosGrupos() {
     // Seleciona todas as divs de grupos de sintomas
     const grupos = document.querySelectorAll('.grupo');

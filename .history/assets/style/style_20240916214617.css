@@ -381,6 +381,16 @@ footer {
 }
 
 
+
+
+
+
+
+
+
+
+
+
 .top-overlay-div .top-1 button:hover {
     cursor: pointer;
 }
@@ -397,7 +407,7 @@ footer {
     max-height: 70%; /* Limita a altura para que os resultados não ocupem a tela inteira */
     overflow-y: auto; /* Ativa a barra de rolagem vertical */
     padding: 20px;
-    border: solid 5px hsl(29, 100%, 42%);
+    
     border-radius: 8px;
 }
 

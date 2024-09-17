@@ -279,6 +279,21 @@ footer {
     }
 }
 
+.grupo:hover {
+    cursor: pointer;
+    .nome-grupo {
+        margin-top: 18px;
+        background-color: hsl(29, 100%, 42%);
+    }
+    .grupo-sintoma {
+        height: 90px;
+        width: 90px;
+        transition: 0.5s;
+        cursor: pointer;
+        border-radius: 50%;
+        background-color: hsl(29, 100%, 42%);   
+    }
+  }
 .grupo-sintoma {
     display: flex;
     justify-content: center;
@@ -293,9 +308,14 @@ footer {
 .grupo-sintoma img {
     width: 90px;
     height: 90px;
-    transition: width 0.3s ease-in-out, height 0.3s ease-in-out;
 }
 
+.grupo-sintoma img:hover {
+    height: 130px;
+    width: 130px;
+    transition: 0.5s;
+    cursor: pointer;
+}
 
 .nome-grupo {
     max-width: 110px;
@@ -332,92 +352,24 @@ footer {
     flex-direction: column;
     width: 100%; /* A largura da div sobreposta será igual à da div base */
     height: 100%; /* A altura será igual à div base */
-    background-color: rgba(87, 160, 189, 0.966); /* Cor com transparência */
-    border-radius: 15px;
-    transition: opacity 0.3s ease-in-out; /* Suavizando a transição de opacidade */
-}
-
-.overlay-div[style*="display: flex"] {
-    opacity: 1;
+    background-color: rgba(183, 233, 230, 0.934); /* Cor com transparência */
+    border: solid 1.5px black;
+        
 }
 
 .top-overlay-div {
+    height: 30%;
     display: flex;
-    height: 35%;
 }
 
 .top-overlay-div .top-1 {
-    width: 50%;
+    width:65%;
+    border: solid 1px black;
 }
-
 .top-overlay-div .top-2 {
-    width: 50%;
-    display: flex;
-    align-items: center;
-    justify-content: center;
+    width: 35%;
+    background-color: #117383;
 }
-
-
-.top-overlay-div .top-2 .grupo {
-    cursor: pointer;
-}
-.top-overlay-div .top-2 .nome-grupo {
-        margin-top: 18px;
-        background-color: hsl(29, 100%, 42%);
-}
-.top-overlay-div .top-2 .grupo-sintoma {
-        height: 90px;
-        width: 90px;
-        transition: 0.5s;
-        cursor: pointer;
-        border-radius: 50%;
-        background-color: hsl(29, 100%, 42%);   
-    }
-
-.top-overlay-div .top-2 .grupo-sintoma img {
-    height: 130px;
-    width: 130px;
-    transition: all 0.5s ease; /* Suavizando a transição */
-}
-
-
-.top-overlay-div .top-1 button:hover {
-    cursor: pointer;
-}
-
 .sintomas-grupo {
-    border-radius: 15px;
-    margin-top: 5px;
-    height: calc(100% - 55px);
-}
 
-/* Container principal dos resultados pesquisa por grupo*/
-#resultados-pesquisa-grupo {
-    
-    max-height: 70%; /* Limita a altura para que os resultados não ocupem a tela inteira */
-    overflow-y: auto; /* Ativa a barra de rolagem vertical */
-    padding: 20px;
-    border: solid 5px hsl(29, 100%, 42%);
-    border-radius: 8px;
-}
-
-/* Barra de rolagem estilizada */
-#resultados-pesquisa-grupo::-webkit-scrollbar {
-    width: 8px;
-}
-
-#resultados-pesquisa-grupo::-webkit-scrollbar-thumb {
-    background-color: #52dcff;
-    border-radius: 10px;
-}
-
-#resultados-pesquisa-grupo::-webkit-scrollbar-thumb:hover {
-    background-color: #52dcff;
-}
-
-.display-off {
-    display: none;
-}
-.display-on {
-    display: block;
 }

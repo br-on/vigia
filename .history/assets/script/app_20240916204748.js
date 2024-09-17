@@ -2,79 +2,144 @@ document.addEventListener('DOMContentLoaded', function () {
     // Carregar sintomas iniciais (se necessário)
 });
 
-
-// Função para exibir a overlay-div e mostrar os sintomas do grupo
+// Função para exibir os sintomas ao clicar em um grupo
 function exibirSintomasPorGrupo(grupoId) {
+    // Encontrar a div overlay e a div onde os sintomas aparecerão
     const overlayDiv = document.querySelector('.overlay-div');
-    const resultadosSintomasDiv = document.getElementById("resultados-pesquisa-grupo");
+    const sintomasGrupoDiv = document.querySelector('.sintomas-grupo');
+
+    // Limpa o conteúdo anterior de sintomas
+    sintomasGrupoDiv.innerHTML = '';
+
+    // Filtrar os sintomas que pertencem ao grupo selecionado
+    const sintomasDoGrupo = dataSintomas.filter(sintoma => sintoma.grupo_sintoma === grupoId);
+
+    if (sintomasDoGrupo.length > 0) {
+        sintomasDoGrupo.forEach(sintoma => {
+            // Cria uma div para cada sintoma com seus detalhes
+            const sintomaDiv = document.createElement('div');
+            sintomaDiv.classList.add('sintoma');
+
+            // Adiciona o título do sintoma
+            const tituloSintoma = document.createElement('h3');
+            tituloSintoma.textContent = sintoma.titulo_sintoma;
+            sintomaDiv.appendChild(tituloSintoma);
+
+            // Adiciona a descrição do sintoma
+            const descricaoSintoma = document.createElement('p');
+            descricaoSintoma.textContent = sintoma.descricao_sintoma;
+            sintomaDiv.appendChild(descricaoSintoma);
+
+            // Adiciona as tags do sintoma
+            const tagsSintoma = document.createElement('p');
+            tagsSintoma.textContent = `Tags: ${sintoma.tags}`;
+            tagsSintoma.style.fontStyle = "italic";
+            sintomaDiv.appendChild(tagsSintoma);
+
+            // Adiciona o sintoma na div de sintomas do grupo
+            sintomasGrupoDiv.appendChild(sintomaDiv);
+        });
+
+        // Exibe a overlay-div
+        overlayDiv.style.display = 'flex';
+    }
+}
+
+
+
+function configurarEventosDeCliqueNosGrupos() {
+    const grupos = document.querySelectorAll('.grupo');
+    const overlayDiv = document.querySelector('.overlay-div');
     const top2Div = document.querySelector('.top-2');
-    const grupoDiv = document.getElementById(grupoId);
 
-    // Limpa resultados anteriores
-    resultadosSintomasDiv.innerHTML = "";
+    grupos.forEach(grupo => {
+        grupo.addEventListener('click', function() {
+            const grupoId = grupo.getAttribute('data-grupo-id');
+            
+            // Move o grupo clicado para a .top-2
+            top2Div.innerHTML = ''; // Limpa o conteúdo anterior
+            const grupoClone = grupo.cloneNode(true); // Clona a div do grupo
+            top2Div.appendChild(grupoClone); // Adiciona a div clonada ao top-2
 
-    // Obter sintomas já escolhidos
-    const sintomasEscolhidos = Array.from(document.getElementById("sintomas-escolhidos").children)
-        .map(div => div.textContent);
+            // Exibe os sintomas associados ao grupo clicado
+            exibirSintomasPorGrupo(grupoId);
+        });
+    });
 
-    // Filtrar sintomas pelo grupo clicado e que não foram escolhidos
-    const sintomasEncontrados = dataSintomas.filter(sintoma => 
-        sintoma.grupo_sintoma.toLowerCase() === grupoId.toLowerCase() &&
-        !sintomasEscolhidos.includes(sintoma.titulo_sintoma)
-    );
+    // Adiciona evento de clique na div .top-2 para fechar a overlay e restaurar o grupo
+    top2Div.addEventListener('click', function() {
+        // Oculta a overlay-div
+        overlayDiv.style.display = 'none';
 
-    if (sintomasEncontrados.length > 0) {
-        sintomasEncontrados.forEach(sintoma => {
-            const divSintoma = document.createElement('div');
-            divSintoma.className = 'sintoma-item';
-            divSintoma.style.backgroundColor = coresPorGrupo[grupoId.toLowerCase()] || '#ccc';
-            divSintoma.textContent = sintoma.titulo_sintoma;
-            divSintoma.addEventListener('click', () => adicionarSintomaEscolhido(sintoma, grupoId));
-            resultadosSintomasDiv.appendChild(divSintoma);
+        // Remove o conteúdo de .top-2 e restaurar a div ao seu lugar original
+        top2Div.innerHTML = '';
+    });
+}
+
+
+
+
+
+function exibirDoencasPorGrupo(grupoId) {
+    // Encontre a div onde as doenças serão exibidas
+    const doencasGrupoDiv = document.querySelector('.doencas-grupo');
+    
+    // Limpe o conteúdo anterior de doenças
+    doencasGrupoDiv.innerHTML = '';
+
+    // Procure as doenças relacionadas ao grupo (por exemplo, mapeando pelo grupoId)
+    const grupoDoencas = dataDoencas.filter(doenca => doenca.tags.includes(grupoId));
+
+    if (grupoDoencas.length > 0) {
+        // Para cada doença relacionada, crie um bloco de informações
+        grupoDoencas.forEach(doenca => {
+            // Cria um container para cada doença
+            const doencaDiv = document.createElement('div');
+            doencaDiv.classList.add('doenca-container');
+
+            // Adiciona o título da doença
+            const titulo = document.createElement('h3');
+            titulo.textContent = doenca.titulo;
+            doencaDiv.appendChild(titulo);
+
+            // Adiciona a descrição
+            const descricao = document.createElement('p');
+            descricao.textContent = `Descrição: ${doenca.descricao}`;
+            doencaDiv.appendChild(descricao);
+
+            // Adiciona os sintomas
+            const sintomas = document.createElement('p');
+            sintomas.textContent = `Sintomas: ${doenca.sintomas}`;
+            doencaDiv.appendChild(sintomas);
+
+            // Adiciona a prevenção
+            const prevencao = document.createElement('p');
+            prevencao.textContent = `Prevenção: ${doenca.prevencao}`;
+            doencaDiv.appendChild(prevencao);
+
+            // Adiciona o tratamento
+            const tratamento = document.createElement('p');
+            tratamento.textContent = `Tratamento: ${doenca.tratamento}`;
+            doencaDiv.appendChild(tratamento);
+
+            // Adiciona o link
+            const link = document.createElement('a');
+            link.href = doenca.link;
+            link.textContent = "Saiba mais";
+            link.target = "_blank"; // Abrir em nova aba
+            doencaDiv.appendChild(link);
+
+            // Adiciona o container da doença à div de exibição
+            doencasGrupoDiv.appendChild(doencaDiv);
         });
     } else {
-        resultadosSintomasDiv.innerHTML = '<p>Nenhum sintoma encontrado para este grupo.</p>';
+        // Exibe uma mensagem caso não haja doenças mapeadas para o grupo
+        doencasGrupoDiv.textContent = 'Nenhuma doença disponível para este grupo.';
     }
-
-    // Clona o conteúdo da div do grupo selecionado e insere na top-2
-    const grupoDivClone = grupoDiv.cloneNode(true);
-    top2Div.innerHTML = ''; // Limpa a top-2 antes de adicionar o clone
-    top2Div.appendChild(grupoDivClone);
-
-    // Exibe a overlay-div
-    overlayDiv.classList.remove('display-off');
-    overlayDiv.classList.add('display-on');
 }
 
-// Função para ocultar a overlay-div
-function ocultarOverlay() {
-    const overlayDiv = document.querySelector('.overlay-div');
-    overlayDiv.classList.remove('display-on');
-    overlayDiv.classList.add('display-off');
-}
-
-    // Função para configurar eventos de clique nos grupos e no botão Voltar
-function configurarEventosDeCliqueNosGrupos() {
-    // Seleciona todas as divs de grupos de sintomas
-    const grupos = document.querySelectorAll('.grupo');
-
-    // Adiciona o evento de clique para cada grupo
-    grupos.forEach(grupo => {
-        grupo.addEventListener('click', () => {
-            exibirSintomasPorGrupo(grupo.id); // Exibe sintomas ao clicar no grupo
-        });
-    });
-
-    // Adiciona evento de clique ao botão Voltar
-    const backButton = document.querySelector('.top-1 button');
-    backButton.addEventListener('click', () => {
-        ocultarOverlay();
-    });
-}
-
-// Chama a função quando a página carrega
+// Chama essa função quando a página carrega
 window.onload = configurarEventosDeCliqueNosGrupos;
-
 
 // Função do botão pesquisar
 function pesquisar() {
