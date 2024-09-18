@@ -55,7 +55,6 @@ function ocultarOverlay() {
 
     // Função para configurar eventos de clique nos grupos e no botão Voltar
 function configurarEventosDeCliqueNosGrupos() {
-    
     // Seleciona todas as divs de grupos de sintomas
     const grupos = document.querySelectorAll('.grupo');
 
