@@ -401,6 +401,7 @@ footer {
     border-radius: 15px;
     margin-top: 5px;
     height: 65%;
+    border: solid 1px purple;
 }
 
 /* Container principal dos resultados pesquisa por grupo*/

@@ -345,8 +345,6 @@ footer {
     display: flex;
     height: 35%;
     background-color: rgb(10, 90, 92);
-    border-top-left-radius: 15px;
-    border-top-right-radius: 15px;
 }
 
 .top-overlay-div .top-1 {
@@ -354,13 +352,8 @@ footer {
 }
 
 .top-overlay-div .top-1 button{
-    background-color: rgb(8, 55, 112);
-    border-top-right-radius: 15px;
-    border-bottom-right-radius: 15px;
-    border-top-left-radius: 0;
-    border-bottom-left-radius: 0;
+    background-color: rgb(24, 100, 52);
 }
-
 
 .top-overlay-div .top-2 {
     width: 50%;
@@ -400,13 +393,13 @@ footer {
 .sintomas-grupo {
     border-radius: 15px;
     margin-top: 5px;
-    height: 65%;
+    height: calc(100% - 55px);
 }
 
 /* Container principal dos resultados pesquisa por grupo*/
 #resultados-pesquisa-grupo {
     
-    max-height: 95%; /* Limita a altura para que os resultados não ocupem a tela inteira */
+    max-height: 70%; /* Limita a altura para que os resultados não ocupem a tela inteira */
     overflow-y: auto; /* Ativa a barra de rolagem vertical */
     padding: 20px;
     border-radius: 8px;
