@@ -9,10 +9,7 @@ const resultadosPesquisa = document.querySelector('#resultados-pesquisa');
 resultadosPesquisa.style.width = `${grupoSintomas.offsetWidth}px`;
 resultadosPesquisa.style.height = `${grupoSintomas.offsetHeight}px`;
 
-document.addEventListener('DOMContentLoaded', function () {
-    var resultadosPesquisa = document.getElementById('resultados-pesquisa');
-    resultadosPesquisa.style.display = 'none'; // Oculta a div resultados-pesquisa
-});
+
 // Função para exibir a overlay-div e mostrar os sintomas do grupo
 function exibirSintomasPorGrupo(grupoId) {
     const overlayDiv = document.querySelector('.overlay-div');
@@ -89,6 +86,8 @@ window.onload = configurarEventosDeCliqueNosGrupos;
 function mostrarGrupos() {
     document.getElementById('resultados-pesquisa').style.display = 'none';
     document.getElementById('grupos-sintomas').style.display = 'block';
+    document.querySelector('.overlay-div').style.display = 'none'; // Certifique-se de ocultar a overlay-div
+
 }
 
 
@@ -96,6 +95,8 @@ function mostrarGrupos() {
 function pesquisar() {
     document.getElementById('grupos-sintomas').style.display = 'none';
     document.getElementById('resultados-pesquisa').style.display = 'block';
+    document.querySelector('.overlay-div').style.display = 'none'; // Certifique-se de ocultar a overlay-div
+
     let campoPesquisa = document.getElementById("campo-pesquisa").value.toLowerCase();
     let resultadosSintomasDiv = document.getElementById("resultados-pesquisa");
     resultadosSintomasDiv.innerHTML = ""; // Limpar resultados anteriores

@@ -14,12 +14,10 @@
     <h2 class="black-ops-one-regular">Agavos, Doenças e Sintomas</h2>
 
     <input type="text" placeholder="Busque por sintomas" class="electrolize-regular" id="campo-pesquisa">
-    <div class="botoes">
-      <button onclick="pesquisar()" class="electrolize-regular">Pesquisar</button>
-      <button onclick="mostrarGrupos()" class="electrolize-regular">Grupos</button>
-    </div>
-    <div id="resultados-pesquisa" class="resultado-pesquisa"></div>
-    <div id="grupos-sintomas" class="grupos-sintomas">
+    <button onclick="pesquisar()">Pesquisar</button>
+    <button onclick="mostrarSintomasPorGrupos()">Sintomas por Grupos</button>
+    
+    <div class="grupos-sintomas">
       <div class="base-div">
       <div id="neurologicos" class="grupo"><div class="grupo-sintoma"><img src="/assets/img/grupos/neurologico.png" alt=""></div><div class="nome-grupo electrolize-regular">Neurológico</div></div>
       <div id="respiratorios" class="grupo"><div class="grupo-sintoma"><img src="assets/img/grupos/respiratorio.png" alt=""></div><div class="nome-grupo electrolize-regular">Respiratório</div></div>
@@ -44,9 +42,11 @@
       </div>  
     </div><br>
 
-    
+    <div id="resultados-pesquisa" class="resultado-pesquisa-sintomas"></div>
+
+
   </header>
-  
+  <br><br>
   <main> 
     <center><h3>Sintomas Escolhidos</h3></center>
     <div id="sintomas-escolhidos">

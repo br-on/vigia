@@ -2,17 +2,37 @@ document.addEventListener('DOMContentLoaded', function () {
     // Carregar sintomas iniciais (se necessário)
 });
 
-  //define a mesma altura e largura para resultado-pesquisa
 const grupoSintomas = document.querySelector('.grupos-sintomas');
 const resultadosPesquisa = document.querySelector('#resultados-pesquisa');
 
 resultadosPesquisa.style.width = `${grupoSintomas.offsetWidth}px`;
 resultadosPesquisa.style.height = `${grupoSintomas.offsetHeight}px`;
 
-document.addEventListener('DOMContentLoaded', function () {
-    var resultadosPesquisa = document.getElementById('resultados-pesquisa');
-    resultadosPesquisa.style.display = 'none'; // Oculta a div resultados-pesquisa
+
+
+document.addEventListener('DOMContentLoaded', function() {
+    const pesquisarBtn = document.getElementById('pesquisar-btn');
+    const gruposBtn = document.getElementById('grupos-btn');
+    const resultadosPesquisa = document.getElementById('resultados-pesquisa');
+    const gruposSintomas = document.querySelector('.grupos-sintomas');
+
+    pesquisarBtn.addEventListener('click', function() {
+        resultadosPesquisa.style.display = 'block'; // Exibe resultados-pesquisa
+        gruposSintomas.style.display = 'none'; // Oculta grupos-sintomas
+    });
+
+    gruposBtn.addEventListener('click', function() {
+        if (resultadosPesquisa.style.display === 'none') {
+            resultadosPesquisa.style.display = 'block'; // Exibe resultados-pesquisa
+            gruposSintomas.style.display = 'none'; // Oculta grupos-sintomas
+        } else {
+            resultadosPesquisa.style.display = 'none'; // Oculta resultados-pesquisa
+            gruposSintomas.style.display = 'block'; // Exibe grupos-sintomas
+        }
+    });
 });
+
+
 // Função para exibir a overlay-div e mostrar os sintomas do grupo
 function exibirSintomasPorGrupo(grupoId) {
     const overlayDiv = document.querySelector('.overlay-div');
@@ -86,16 +106,9 @@ function configurarEventosDeCliqueNosGrupos() {
 // Chama a função quando a página carrega
 window.onload = configurarEventosDeCliqueNosGrupos;
 
-function mostrarGrupos() {
-    document.getElementById('resultados-pesquisa').style.display = 'none';
-    document.getElementById('grupos-sintomas').style.display = 'block';
-}
-
 
 // Função do botão pesquisar
 function pesquisar() {
-    document.getElementById('grupos-sintomas').style.display = 'none';
-    document.getElementById('resultados-pesquisa').style.display = 'block';
     let campoPesquisa = document.getElementById("campo-pesquisa").value.toLowerCase();
     let resultadosSintomasDiv = document.getElementById("resultados-pesquisa");
     resultadosSintomasDiv.innerHTML = ""; // Limpar resultados anteriores

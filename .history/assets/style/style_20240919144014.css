@@ -45,7 +45,6 @@ header, nav, footer {
 
 main {
     flex: 1;
-    margin-top: 25px;
 }
 
 h1, h2 {
@@ -137,19 +136,8 @@ footer {
     overflow-y: auto; /* Ativa a barra de rolagem vertical */
     padding: 20px;
     border-radius: 8px;
-}
-
-.resultado-pesquisa {
-    position: relative;
-    margin: 0 auto;
-    display: inline-flex;
-    flex-wrap: wrap;
-    justify-content: center;
-    align-items: flex-start;
-    min-height: 170px;
-    background-color: #0f5c50;
-    border-radius: 15px;
-    box-shadow: 10px 10px 17px #4cf8cd;
+    box-shadow: 0px 4px 10px rgba(0, 0, 0, 0.1); /* Sombra suave */
+    background-color: #f9f9f9; /* Fundo claro */
 }
 
 /* Estilo dos itens de resultado */
@@ -269,7 +257,18 @@ footer {
     align-items: center;
     justify-content: center;
 }
-
+.resultado-pesquisa {
+    position: relative;
+    margin: 0 auto;
+    display: inline-flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    align-items: flex-start;
+    min-height: 170px;
+    background-color: #0f5c5093;
+    border-radius: 15px;
+    box-shadow: 10px 10px 17px #4cf8cd;
+}
 
 .grupos-sintomas {
     position: relative;

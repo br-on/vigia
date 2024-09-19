@@ -9,10 +9,7 @@ const resultadosPesquisa = document.querySelector('#resultados-pesquisa');
 resultadosPesquisa.style.width = `${grupoSintomas.offsetWidth}px`;
 resultadosPesquisa.style.height = `${grupoSintomas.offsetHeight}px`;
 
-document.addEventListener('DOMContentLoaded', function () {
-    var resultadosPesquisa = document.getElementById('resultados-pesquisa');
-    resultadosPesquisa.style.display = 'none'; // Oculta a div resultados-pesquisa
-});
+
 // Função para exibir a overlay-div e mostrar os sintomas do grupo
 function exibirSintomasPorGrupo(grupoId) {
     const overlayDiv = document.querySelector('.overlay-div');

@@ -45,7 +45,6 @@ header, nav, footer {
 
 main {
     flex: 1;
-    margin-top: 25px;
 }
 
 h1, h2 {
@@ -147,7 +146,7 @@ footer {
     justify-content: center;
     align-items: flex-start;
     min-height: 170px;
-    background-color: #0f5c50;
+    background-color: #0f5c5093;
     border-radius: 15px;
     box-shadow: 10px 10px 17px #4cf8cd;
 }

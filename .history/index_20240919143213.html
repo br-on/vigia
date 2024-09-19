@@ -15,11 +15,11 @@
 
     <input type="text" placeholder="Busque por sintomas" class="electrolize-regular" id="campo-pesquisa">
     <div class="botoes">
-      <button onclick="pesquisar()" class="electrolize-regular">Pesquisar</button>
-      <button onclick="mostrarGrupos()" class="electrolize-regular">Grupos</button>
+      <button onclick="pesquisar()">Pesquisar</button>
+      <button onclick="mostrarGrupos()">GRUPOS</button>
     </div>
-    <div id="resultados-pesquisa" class="resultado-pesquisa"></div>
-    <div id="grupos-sintomas" class="grupos-sintomas">
+    <div id="resultados-pesquisa" class="resultado-pesquisa-sintomas" style="display: none;"></div>
+    <div id="grupos-sintomas" class="grupos-sintomas" style="display: none;">
       <div class="base-div">
       <div id="neurologicos" class="grupo"><div class="grupo-sintoma"><img src="/assets/img/grupos/neurologico.png" alt=""></div><div class="nome-grupo electrolize-regular">Neurológico</div></div>
       <div id="respiratorios" class="grupo"><div class="grupo-sintoma"><img src="assets/img/grupos/respiratorio.png" alt=""></div><div class="nome-grupo electrolize-regular">Respiratório</div></div>

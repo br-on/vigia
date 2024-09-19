@@ -2,17 +2,20 @@ document.addEventListener('DOMContentLoaded', function () {
     // Carregar sintomas iniciais (se necessário)
 });
 
-  //define a mesma altura e largura para resultado-pesquisa
-const grupoSintomas = document.querySelector('.grupos-sintomas');
-const resultadosPesquisa = document.querySelector('#resultados-pesquisa');
-
-resultadosPesquisa.style.width = `${grupoSintomas.offsetWidth}px`;
-resultadosPesquisa.style.height = `${grupoSintomas.offsetHeight}px`;
-
-document.addEventListener('DOMContentLoaded', function () {
+function mostrarSintomasPorGrupos() {
+    // Obtém as divs
+    var gruposSintomas = document.querySelector('.grupos-sintomas');
     var resultadosPesquisa = document.getElementById('resultados-pesquisa');
-    resultadosPesquisa.style.display = 'none'; // Oculta a div resultados-pesquisa
-});
+    
+    // Verifica o estado da div e alterna a visibilidade
+    if (gruposSintomas.style.display === 'none' || gruposSintomas.style.display === '') {
+      gruposSintomas.style.display = 'block';
+      resultadosPesquisa.style.display = 'none';
+    } else {
+      gruposSintomas.style.display = 'none';
+    }
+  }
+
 // Função para exibir a overlay-div e mostrar os sintomas do grupo
 function exibirSintomasPorGrupo(grupoId) {
     const overlayDiv = document.querySelector('.overlay-div');
@@ -86,16 +89,21 @@ function configurarEventosDeCliqueNosGrupos() {
 // Chama a função quando a página carrega
 window.onload = configurarEventosDeCliqueNosGrupos;
 
-function mostrarGrupos() {
-    document.getElementById('resultados-pesquisa').style.display = 'none';
-    document.getElementById('grupos-sintomas').style.display = 'block';
-}
-
 
 // Função do botão pesquisar
 function pesquisar() {
-    document.getElementById('grupos-sintomas').style.display = 'none';
-    document.getElementById('resultados-pesquisa').style.display = 'block';
+
+            // Aqui você pode adicionar a lógica de pesquisa
+    var gruposSintomas = document.querySelector('.grupos-sintomas');
+    var resultadosPesquisa = document.getElementById('resultados-pesquisa');
+    
+    // Oculta a div de grupos de sintomas e exibe a div de resultados de pesquisa
+    gruposSintomas.style.display = 'none';
+    resultadosPesquisa.style.display = 'block';
+
+    // Simulação de resultado (adicione sua lógica de pesquisa aqui)
+    document.getElementById('resultados-pesquisa').innerHTML = "<p>Resultados da pesquisa aparecerão aqui.</p>";
+
     let campoPesquisa = document.getElementById("campo-pesquisa").value.toLowerCase();
     let resultadosSintomasDiv = document.getElementById("resultados-pesquisa");
     resultadosSintomasDiv.innerHTML = ""; // Limpar resultados anteriores
@@ -217,3 +225,5 @@ function mostrarDoencasRelacionadas() {
         }
     });
 }
+
+

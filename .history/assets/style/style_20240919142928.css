@@ -45,7 +45,6 @@ header, nav, footer {
 
 main {
     flex: 1;
-    margin-top: 25px;
 }
 
 h1, h2 {
@@ -66,6 +65,7 @@ h1, h2 {
     border-radius: 5px;
     font-size: 1rem;
     box-shadow: 5px 5px 4.5px #19a381;
+    border: solid 1px red;
 }
 
 .search button {
@@ -78,6 +78,8 @@ h1, h2 {
     font-size: 1.20rem;
     font-weight: bold;
     margin-bottom: 15px;
+    border: solid 1px red;
+
 }
 
 .search button:hover {
@@ -136,20 +138,10 @@ footer {
     max-height: 80vh; /* Limita a altura para que os resultados não ocupem a tela inteira */
     overflow-y: auto; /* Ativa a barra de rolagem vertical */
     padding: 20px;
+    margin-top: 20px;
     border-radius: 8px;
-}
-
-.resultado-pesquisa {
-    position: relative;
-    margin: 0 auto;
-    display: inline-flex;
-    flex-wrap: wrap;
-    justify-content: center;
-    align-items: flex-start;
-    min-height: 170px;
-    background-color: #0f5c50;
-    border-radius: 15px;
-    box-shadow: 10px 10px 17px #4cf8cd;
+    box-shadow: 0px 4px 10px rgba(0, 0, 0, 0.1); /* Sombra suave */
+    background-color: #f9f9f9; /* Fundo claro */
 }
 
 /* Estilo dos itens de resultado */
@@ -264,12 +256,17 @@ footer {
 }
 
 .resultado-pesquisa-sintomas {
+    position: relative;
+    margin: 0 auto;
     display: inline-flex;
     flex-wrap: wrap;
-    align-items: center;
     justify-content: center;
+    align-items: flex-start;
+    min-height: 170px;
+    background-color: #0f5c5093;
+    border-radius: 15px;
+    box-shadow: 10px 10px 17px #4cf8cd;
 }
-
 
 .grupos-sintomas {
     position: relative;
@@ -377,7 +374,6 @@ footer {
     border-bottom-right-radius: 15px;
     border-top-left-radius: 0;
     border-bottom-left-radius: 0;
-    width: 100%;
 }
 
 
