@@ -1,10 +1,3 @@
-    // variaveis globais bara definir mesma altura para resultados-pesquisa
-const grupoSintomas = document.querySelector('.grupos-sintomas');
-const resultadosPesquisa = document.querySelector('#resultados-pesquisa');
-
-resultadosPesquisa.style.width = `${grupoSintomas.offsetWidth}px`;
-resultadosPesquisa.style.height = `${grupoSintomas.offsetHeight}px`;
-
 document.addEventListener('DOMContentLoaded', function () {
     // Inicialmente, ocultar a div #resultados-pesquisa
     const resultadosPesquisa = document.getElementById('resultados-pesquisa');
@@ -13,6 +6,14 @@ document.addEventListener('DOMContentLoaded', function () {
     // Configurar eventos de clique nos grupos e no botão Voltar
     configurarEventosDeCliqueNosGrupos();
 });
+
+const grupoSintomas = document.querySelector('.grupos-sintomas');
+const resultadosPesquisa = document.querySelector('#resultados-pesquisa');
+
+resultadosPesquisa.style.width = `${grupoSintomas.offsetWidth}px`;
+resultadosPesquisa.style.height = `${grupoSintomas.offsetHeight}px`;
+
+
 
 function configurarEventosDeCliqueNosGrupos() {
     // Seleciona todas as divs de grupos de sintomas

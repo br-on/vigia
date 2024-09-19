@@ -1,0 +1,344 @@
+/* Importação de fontes */
+@import url('https://fonts.googleapis.com/css2?family=Black+Ops+One&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Electrolize&display=swap');
+
+/* Reset e Estilos Globais */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+html, body {
+    height: 100%;
+}
+
+body {
+    font-family: Arial, sans-serif;
+    line-height: 1.6;
+}
+
+/* Tipografia */
+.black-ops-one-regular {
+    font-family: "Black Ops One", system-ui;
+    font-weight: 400;
+    font-style: normal;
+}
+
+.electrolize-regular {
+    font-family: "Electrolize", sans-serif;
+    font-weight: 600;
+    font-style: normal;
+}
+
+/* Estilos de Layout */
+header, nav, footer {
+    background-color: #333;
+    color: #fff;
+    text-align: center;
+}
+
+main {
+    flex: 1;
+    margin-top: 25px;
+}
+
+/* Cabeçalhos */
+h1, h2 {
+    color: #66ffcc;
+}
+
+/* Formulário de Pesquisa */
+.search {
+    text-align: center;
+    background-color: #117383;
+}
+
+.search input[type="text"] {
+    margin-top: 15px;
+    width: 100%; /* Ajustado para flexível */
+    max-width: 600px;
+    padding: 0.75rem;
+    border: 1px solid #ccc;
+    border-radius: 5px;
+    font-size: 1rem;
+    box-shadow: 5px 5px 4.5px #19a381;
+}
+
+.search button {
+    padding: 0.75rem 2rem;
+    background-color: #66ffcc;
+    color: #000;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    font-size: 1.2rem;
+    font-weight: bold;
+    margin-bottom: 15px;
+}
+
+.search button:hover {
+    background-color: #29a67c;
+    color: #fff;
+}
+
+/* Resultados */
+.results {
+    padding: 2rem;
+    background-color: #fff;
+    text-align: center;
+}
+
+/* Rodapé */
+footer {
+    padding: 1rem;
+    position: relative;
+    bottom: 0;
+    width: 100%;
+}
+
+/* Barra de Rolagem Estilizada */
+::-webkit-scrollbar {
+    width: 8px;
+}
+
+::-webkit-scrollbar-thumb {
+    background-color: #888;
+    border-radius: 10px;
+}
+
+::-webkit-scrollbar-thumb:hover {
+    background-color: #555;
+}
+
+/* Container e Itens de Resultados */
+#resultados-pesquisa {
+    max-height: 80vh;
+    overflow-y: auto;
+    padding: 20px;
+}
+
+.resultado-pesquisa, .grupos-sintomas {
+    display: inline-flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    align-items: flex-start;
+    min-height: 170px;
+    background-color: #0f5c50;
+    border-radius: 15px;
+    box-shadow: 10px 10px 17px #4cf8cd;
+    margin: 0 auto;
+    position: relative;
+}
+
+.item-resultado {
+    border: 3px solid #e0e0e0;
+    border-radius: 8px;
+    padding: 20px;
+    margin-bottom: 20px;
+    background-color: #fff;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.05);
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+.item-resultado:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 6px 12px rgba(0, 0, 0, 0.15);
+}
+
+.item-resultado h2 {
+    font-size: 1.8rem;
+    margin-bottom: 10px;
+    color: #333;
+    font-weight: bold;
+}
+
+.item-resultado h4 {
+    font-size: 1.2rem;
+    margin: 15px 0 8px;
+    color: #555;
+}
+
+.item-resultado .descricao-meta {
+    font-size: 1rem;
+    line-height: 1.5;
+    color: #666;
+    margin-bottom: 15px;
+}
+
+.item-resultado a {
+    font-size: 1rem;
+    color: #007bff;
+    text-decoration: none;
+}
+
+.item-resultado a:hover {
+    text-decoration: underline;
+}
+
+/* Filtros e Sintomas */
+#filtros-sintomas {
+    width: 90%;
+    margin: 0 auto;
+    display: flex;
+    flex-wrap: wrap;
+    gap: 10px;
+}
+
+#filtros-sintomas label {
+    display: flex;
+    align-items: center;
+    margin-right: 10px;
+}
+
+.sintoma-item, .sintoma-escolhido {
+    padding: 10px;
+    margin: 5px;
+    border-radius: 5px;
+}
+
+.sintoma-item {
+    cursor: pointer;
+}
+
+.sintoma-item:hover {
+    opacity: 0.8;
+}
+
+#sintomas-escolhidos, .resultado-pesquisa-sintomas {
+    display: inline-flex;
+    flex-wrap: wrap;
+    margin-top: 20px;
+    align-items: center;
+    justify-content: center;
+}
+
+.sintoma-escolhido {
+    background-color: #d4edda;
+    border: 1px solid #c3e6cb;
+}
+
+.grupo-sintoma {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    margin: 5px;
+    width: 100px;
+    height: 100px;
+    border-radius: 18px;
+    border: solid 2.5px #66ffcc;
+}
+
+.grupo-sintoma img {
+    width: 90px;
+    height: 90px;
+    transition: width 0.3s ease-in-out, height 0.3s ease-in-out;
+}
+
+.nome-grupo {
+    max-width: 110px;
+    font-size: 1em;
+    color: #66ffcc;
+    line-height: 1.5;
+}
+
+/* Estilos Adicionais para Overlay */
+.base-div {
+    display: inline-flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    position: relative;
+    z-index: 1;
+}
+
+.overlay-div {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-color: rgba(87, 160, 189, 0.966);
+    border-radius: 15px;
+    transition: opacity 0.3s ease-in-out;
+    display: none;
+}
+
+.overlay-div[style*="display: flex"] {
+    opacity: 1;
+}
+
+.top-overlay-div {
+    display: flex;
+    height: 35%;
+    background-color: rgb(10, 90, 92);
+    border-top-left-radius: 15px;
+    border-top-right-radius: 15px;
+}
+
+.top-overlay-div .top-1 {
+    width: 50%;
+}
+
+.top-overlay-div .top-1 button {
+    background-color: rgb(151, 168, 189);
+    border-radius: 15px;
+    width: 100%;
+}
+
+.top-overlay-div .top-2 {
+    width: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.top-overlay-div .top-2 .grupo {
+    cursor: pointer;
+}
+
+.top-overlay-div .top-2 .nome-grupo {
+    margin-top: 18px;
+    background-color: hsl(29, 100%, 42%);
+}
+
+.top-overlay-div .top-2 .grupo-sintoma {
+    height: 90px;
+    width: 90px;
+    transition: 0.5s;
+    cursor: pointer;
+    border-radius: 50%;
+    background-color: hsl(29, 100%, 42%);
+}
+
+.top-overlay-div .top-2 .grupo-sintoma img {
+    height: 130px;
+    width: 130px;
+    transition: all 0.5s ease;
+}
+
+.top-overlay-div .top-1 button:hover {
+    cursor: pointer;
+}
+
+.sintomas-grupo {
+    border-radius: 15px;
+    margin-top: 5px;
+    height: 65%;
+}
+
+/* Container principal dos resultados por grupo */
+#resultados-pesquisa-grupo {
+    max-height: 95%;
+    overflow-y: auto;
+    padding: 20px;
+    border-radius: 8px;
+}
+
+/* Display Utilitários */
+.display-off {
+    display: none;
+}
+
+.display-on {
+    display: block;
+}

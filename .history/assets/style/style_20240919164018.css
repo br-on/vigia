@@ -437,6 +437,7 @@ footer {
 #resultados-pesquisa-grupo .sintoma-item {
     width: 100%;
     font-weight: bolder;
+    color: white;
 }
 
 /* Barra de rolagem estilizada */

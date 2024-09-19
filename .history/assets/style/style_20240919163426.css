@@ -13,11 +13,6 @@
   font-style: normal;
 }
 
-.font-item-sintoma {
-    font-family:'Courier New', Courier, monospace;
-    color: white;
-}
-
 /* Estilos globais */
 * {
     margin: 0;
@@ -377,7 +372,6 @@ footer {
     border-bottom-right-radius: 40px;
     border-top-left-radius: 0;
     border-bottom-left-radius: 0;
-    border-bottom: solid 1px whitesmoke;
     width: 100%;
 }
 

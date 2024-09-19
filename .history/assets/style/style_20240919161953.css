@@ -13,11 +13,6 @@
   font-style: normal;
 }
 
-.font-item-sintoma {
-    font-family:'Courier New', Courier, monospace;
-    color: white;
-}
-
 /* Estilos globais */
 * {
     margin: 0;
@@ -140,7 +135,7 @@ footer {
     min-height: 170px;
     background-color: #0f5c50;
     border-radius: 15px;
-    border: solid 1px white;
+    border: solid 0.7px white;
     box-shadow: 10px 10px 17px #4cf8cd;
     max-height: 80vh; /* Limita a altura para que os resultados não ocupem a tela inteira */
     overflow-y: auto; /* Ativa a barra de rolagem vertical */
@@ -236,10 +231,7 @@ footer {
     margin: 5px 0;
     border-radius: 5px;
     cursor: pointer;
-    margin: 5px;
-    border: solid 2px black;
-    font-weight: bolder;
-
+    margin: 2px;
 }
 
 .sintoma-item:hover {
@@ -279,8 +271,6 @@ footer {
     background-color: #0f5c5093;
     border-radius: 15px;
     box-shadow: 10px 10px 17px #4cf8cd;
-    border: solid 1px white;
-
 }
 
 /* Media Queries para telas menores */
@@ -361,10 +351,9 @@ footer {
 .top-overlay-div {
     display: flex;
     height: 35%;
-    background-color: rgb(29, 87, 92);
+    background-color: rgb(10, 90, 92);
     border-top-left-radius: 15px;
     border-top-right-radius: 15px;
-    border: solid 3px black;
 }
 
 .top-overlay-div .top-1 {
@@ -372,12 +361,11 @@ footer {
 }
 
 .top-overlay-div .top-1 button{
-    background-color: #29a67c;
-    border-top-right-radius: 40px;
-    border-bottom-right-radius: 40px;
+    background-color: rgb(151, 168, 189);
+    border-top-right-radius: 15px;
+    border-bottom-right-radius: 15px;
     border-top-left-radius: 0;
     border-bottom-left-radius: 0;
-    border-bottom: solid 1px whitesmoke;
     width: 100%;
 }
 
@@ -418,10 +406,9 @@ footer {
 }
 
 .sintomas-grupo {
-    border-radius: 0 0 15px 15px;
+    border-radius: 15px;
     margin-top: 5px;
     height: 65%;
-  
 }
 
 /* Container principal dos resultados pesquisa por grupo*/
@@ -431,12 +418,6 @@ footer {
     overflow-y: auto; /* Ativa a barra de rolagem vertical */
     padding: 20px;
     border-radius: 8px;
-    
-}
-
-#resultados-pesquisa-grupo .sintoma-item {
-    width: 100%;
-    font-weight: bolder;
 }
 
 /* Barra de rolagem estilizada */

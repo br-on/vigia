@@ -13,11 +13,6 @@
   font-style: normal;
 }
 
-.font-item-sintoma {
-    font-family:'Courier New', Courier, monospace;
-    color: white;
-}
-
 /* Estilos globais */
 * {
     margin: 0;
@@ -238,8 +233,6 @@ footer {
     cursor: pointer;
     margin: 5px;
     border: solid 2px black;
-    font-weight: bolder;
-
 }
 
 .sintoma-item:hover {
@@ -361,10 +354,9 @@ footer {
 .top-overlay-div {
     display: flex;
     height: 35%;
-    background-color: rgb(29, 87, 92);
+    background-color: rgb(10, 90, 92);
     border-top-left-radius: 15px;
     border-top-right-radius: 15px;
-    border: solid 3px black;
 }
 
 .top-overlay-div .top-1 {
@@ -374,10 +366,9 @@ footer {
 .top-overlay-div .top-1 button{
     background-color: #29a67c;
     border-top-right-radius: 40px;
-    border-bottom-right-radius: 40px;
+    border-bottom-right-radius: 30px;
     border-top-left-radius: 0;
     border-bottom-left-radius: 0;
-    border-bottom: solid 1px whitesmoke;
     width: 100%;
 }
 
@@ -418,10 +409,9 @@ footer {
 }
 
 .sintomas-grupo {
-    border-radius: 0 0 15px 15px;
+    border-radius: 15px;
     margin-top: 5px;
     height: 65%;
-  
 }
 
 /* Container principal dos resultados pesquisa por grupo*/
@@ -431,12 +421,10 @@ footer {
     overflow-y: auto; /* Ativa a barra de rolagem vertical */
     padding: 20px;
     border-radius: 8px;
-    
 }
 
 #resultados-pesquisa-grupo .sintoma-item {
     width: 100%;
-    font-weight: bolder;
 }
 
 /* Barra de rolagem estilizada */

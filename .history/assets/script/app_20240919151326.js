@@ -1,4 +1,8 @@
-    // variaveis globais bara definir mesma altura para resultados-pesquisa
+document.addEventListener('DOMContentLoaded', function () {
+    // Carregar sintomas iniciais (se necessário)
+});
+
+  //define a mesma altura e largura para resultado-pesquisa
 const grupoSintomas = document.querySelector('.grupos-sintomas');
 const resultadosPesquisa = document.querySelector('#resultados-pesquisa');
 
@@ -6,30 +10,10 @@ resultadosPesquisa.style.width = `${grupoSintomas.offsetWidth}px`;
 resultadosPesquisa.style.height = `${grupoSintomas.offsetHeight}px`;
 
 document.addEventListener('DOMContentLoaded', function () {
-    // Inicialmente, ocultar a div #resultados-pesquisa
-    const resultadosPesquisa = document.getElementById('resultados-pesquisa');
-    resultadosPesquisa.style.display = 'none';
-    
-    // Configurar eventos de clique nos grupos e no botão Voltar
-    configurarEventosDeCliqueNosGrupos();
+    var resultadosPesquisa = document.getElementById('resultados-pesquisa');
+    resultadosPesquisa.style.display = 'none'; // Oculta a div resultados-pesquisa
 });
-
-function configurarEventosDeCliqueNosGrupos() {
-    // Seleciona todas as divs de grupos de sintomas
-    const grupos = document.querySelectorAll('.grupo');
-    
-    // Adiciona o evento de clique para cada grupo
-    grupos.forEach(grupo => {
-        grupo.addEventListener('click', () => {
-            exibirSintomasPorGrupo(grupo.id);
-        });
-    });
-    
-    // Adiciona evento de clique ao botão Voltar
-    const backButton = document.querySelector('.top-1 button');
-    backButton.addEventListener('click', ocultarOverlay);
-}
-
+// Função para exibir a overlay-div e mostrar os sintomas do grupo
 function exibirSintomasPorGrupo(grupoId) {
     const overlayDiv = document.querySelector('.overlay-div');
     const resultadosSintomasDiv = document.getElementById("resultados-pesquisa-grupo");
@@ -49,7 +33,6 @@ function exibirSintomasPorGrupo(grupoId) {
         !sintomasEscolhidos.includes(sintoma.titulo_sintoma)
     );
 
-    // Exibir sintomas encontrados ou mensagem de "nenhum sintoma encontrado"
     if (sintomasEncontrados.length > 0) {
         sintomasEncontrados.forEach(sintoma => {
             const divSintoma = document.createElement('div');
@@ -73,17 +56,43 @@ function exibirSintomasPorGrupo(grupoId) {
     overlayDiv.classList.add('display-on');
 }
 
+// Função para ocultar a overlay-div
 function ocultarOverlay() {
     const overlayDiv = document.querySelector('.overlay-div');
     overlayDiv.classList.remove('display-on');
     overlayDiv.classList.add('display-off');
 }
 
+    // Função para configurar eventos de clique nos grupos e no botão Voltar
+function configurarEventosDeCliqueNosGrupos() {
+    
+    // Seleciona todas as divs de grupos de sintomas
+    const grupos = document.querySelectorAll('.grupo');
+
+    // Adiciona o evento de clique para cada grupo
+    grupos.forEach(grupo => {
+        grupo.addEventListener('click', () => {
+            exibirSintomasPorGrupo(grupo.id); // Exibe sintomas ao clicar no grupo
+        });
+    });
+
+    // Adiciona evento de clique ao botão Voltar
+    const backButton = document.querySelector('.top-1 button');
+    backButton.addEventListener('click', () => {
+        ocultarOverlay();
+    });
+}
+
+// Chama a função quando a página carrega
+window.onload = configurarEventosDeCliqueNosGrupos;
+
 function mostrarGrupos() {
     document.getElementById('resultados-pesquisa').style.display = 'none';
     document.getElementById('grupos-sintomas').style.display = 'block';
 }
 
+
+// Função do botão pesquisar
 function pesquisar() {
     document.getElementById('grupos-sintomas').style.display = 'none';
     document.getElementById('resultados-pesquisa').style.display = 'block';
@@ -119,7 +128,8 @@ function adicionarSintomaEscolhido(sintoma, grupoId) {
     let sintomasEscolhidosDiv = document.getElementById("sintomas-escolhidos");
 
     // Verifica se o sintoma já foi escolhido
-    if (Array.from(sintomasEscolhidosDiv.children).some(div => div.textContent === sintoma.titulo_sintoma)) return;
+    let sintomaJaEscolhido = Array.from(sintomasEscolhidosDiv.children).some(div => div.textContent === sintoma.titulo_sintoma);
+    if (sintomaJaEscolhido) return; // Evita adicionar o mesmo sintoma mais de uma vez
 
     let divEscolhido = document.createElement('div');
     divEscolhido.className = 'sintoma-escolhido';
@@ -160,6 +170,7 @@ function removerSintomaEscolhido(sintoma) {
     let divSintoma = document.createElement('div');
     divSintoma.className = 'sintoma-item';
     
+    // Atribuir cor do grupo
     let grupoId = sintoma.grupo_sintoma.toLowerCase().replace(/\s/g, '-');
     divSintoma.style.backgroundColor = coresPorGrupo[grupoId] || '#ccc';
 
@@ -190,13 +201,19 @@ function mostrarDoencasRelacionadas() {
         // Se todos os sintomas escolhidos estiverem presentes, exibe a doença
         if (correspondeSintomas) {
             resultadosDoencasDiv.innerHTML += `
-                <div class="item-resultado">
+                <div class="item-resultado">                    
                     <center><h2 class="black-ops-one-regular">${doenca.titulo}</h2></center>
                     <h4 class="electrolize-regular">Descrição</h4>
                     <p class="descricao-meta">${doenca.descricao}</p>
                     <h4 class="electrolize-regular">Sintomas</h4>
                     <p class="descricao-meta">${doenca.sintomas}</p>
-                </div>`;
+                    <h4 class="electrolize-regular">Prevenção</h4>
+                    <p class="descricao-meta">${doenca.prevencao}</p>
+                    <h4 class="electrolize-regular">Tratamento</h4>
+                    <p class="descricao-meta">${doenca.tratamento}</p>
+                    <a href="${doenca.link}" target="_blank">${doenca.link}</a>
+                </div>
+            `;
         }
     });
 }

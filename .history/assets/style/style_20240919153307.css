@@ -1,6 +1,11 @@
 @import url('https://fonts.googleapis.com/css2?family=Black+Ops+One&display=swap');
 @import url('https://fonts.googleapis.com/css2?family=Electrolize&display=swap');
 
+* {
+    margin: 0;
+    padding: 0;
+}
+
 .black-ops-one-regular {
   font-family: "Black Ops One", system-ui;
   font-weight: 400;
@@ -11,11 +16,6 @@
   font-family: "Electrolize", sans-serif;
   font-weight: 600;
   font-style: normal;
-}
-
-.font-item-sintoma {
-    font-family:'Courier New', Courier, monospace;
-    color: white;
 }
 
 /* Estilos globais */
@@ -32,9 +32,12 @@ html, body {
 body {
     font-family: Arial, sans-serif;
     line-height: 1.6;
+    margin: 0;
+    padding: 0;
+
 }
 
-footer {
+header, nav, footer {
     background-color: #333;
     color: #fff;
     text-align: center;
@@ -46,13 +49,13 @@ main {
 }
 
 h1, h2 {
-    color: #a7e2ce;
+    color: #66ffcc;
 }
 
 /* Estilo para o formulário de pesquisa */
 .search {
     text-align: center;
-    background-color: #298b9a;
+    background-color: #117383;
 }
 
 .search input[type="text"] {
@@ -62,12 +65,12 @@ h1, h2 {
     border: 1px solid #ccc;
     border-radius: 5px;
     font-size: 1rem;
-    box-shadow: 5px 5px 1px #b1efdf;
+    box-shadow: 5px 5px 4.5px #19a381;
 }
 
 .search button {
     padding: 0.75rem 2rem;
-    background-color: #29a67c;
+    background-color: #66ffcc;
     color: #000;
     border: none;
     border-radius: 5px;
@@ -78,10 +81,8 @@ h1, h2 {
 }
 
 .search button:hover {
-    
-    background-color: #badbd0;
-    color: rgb(12, 112, 72);
-    border: solid 2px white;
+    background-color: #29a67c;
+    color: rgb(255, 255, 255);
 }
 
 /* Estilo para resultados */
@@ -129,6 +130,14 @@ footer {
     }
 }
 
+/* Container principal dos resultados */
+#resultados-pesquisa {
+    
+    max-height: 80vh; /* Limita a altura para que os resultados não ocupem a tela inteira */
+    overflow-y: auto; /* Ativa a barra de rolagem vertical */
+    padding: 20px;
+    border-radius: 8px;
+}
 
 .resultado-pesquisa {
     position: relative;
@@ -140,11 +149,7 @@ footer {
     min-height: 170px;
     background-color: #0f5c50;
     border-radius: 15px;
-    border: solid 1px white;
     box-shadow: 10px 10px 17px #4cf8cd;
-    max-height: 80vh; /* Limita a altura para que os resultados não ocupem a tela inteira */
-    overflow-y: auto; /* Ativa a barra de rolagem vertical */
-    padding: 20px;
 }
 
 /* Estilo dos itens de resultado */
@@ -153,6 +158,7 @@ footer {
     border-radius: 8px; /* Bordas arredondadas */
     padding: 20px; /* Espaçamento interno */
     margin-bottom: 20px; /* Espaçamento entre os itens */
+    background-color: #fff; /* Fundo branco para o item */
     box-shadow: 0px 4px 8px rgba(0, 0, 0, 0.05); /* Sombra leve */
     transition: transform 0.3s ease, box-shadow 0.3s ease; /* Transição suave */
 }
@@ -236,10 +242,7 @@ footer {
     margin: 5px 0;
     border-radius: 5px;
     cursor: pointer;
-    margin: 5px;
-    border: solid 2px black;
-    font-weight: bolder;
-
+    margin: 2px;
 }
 
 .sintoma-item:hover {
@@ -279,13 +282,11 @@ footer {
     background-color: #0f5c5093;
     border-radius: 15px;
     box-shadow: 10px 10px 17px #4cf8cd;
-    border: solid 1px white;
-
 }
 
 /* Media Queries para telas menores */
 @media (max-width: 768px) {
-    .grupos-sintomas, .resultado-pesquisa {
+    .grupos-sintomas {
         width: 94.5%;
     }
 }
@@ -361,10 +362,9 @@ footer {
 .top-overlay-div {
     display: flex;
     height: 35%;
-    background-color: rgb(29, 87, 92);
+    background-color: rgb(10, 90, 92);
     border-top-left-radius: 15px;
     border-top-right-radius: 15px;
-    border: solid 3px black;
 }
 
 .top-overlay-div .top-1 {
@@ -372,12 +372,11 @@ footer {
 }
 
 .top-overlay-div .top-1 button{
-    background-color: #29a67c;
-    border-top-right-radius: 40px;
-    border-bottom-right-radius: 40px;
+    background-color: rgb(151, 168, 189);
+    border-top-right-radius: 15px;
+    border-bottom-right-radius: 15px;
     border-top-left-radius: 0;
     border-bottom-left-radius: 0;
-    border-bottom: solid 1px whitesmoke;
     width: 100%;
 }
 
@@ -418,10 +417,9 @@ footer {
 }
 
 .sintomas-grupo {
-    border-radius: 0 0 15px 15px;
+    border-radius: 15px;
     margin-top: 5px;
     height: 65%;
-  
 }
 
 /* Container principal dos resultados pesquisa por grupo*/
@@ -431,12 +429,6 @@ footer {
     overflow-y: auto; /* Ativa a barra de rolagem vertical */
     padding: 20px;
     border-radius: 8px;
-    
-}
-
-#resultados-pesquisa-grupo .sintoma-item {
-    width: 100%;
-    font-weight: bolder;
 }
 
 /* Barra de rolagem estilizada */

@@ -14,8 +14,7 @@
 }
 
 .font-item-sintoma {
-    font-family:'Courier New', Courier, monospace;
-    color: white;
+    font-family: fantasy;
 }
 
 /* Estilos globais */
@@ -437,6 +436,7 @@ footer {
 #resultados-pesquisa-grupo .sintoma-item {
     width: 100%;
     font-weight: bolder;
+    color: white;
 }
 
 /* Barra de rolagem estilizada */

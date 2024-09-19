@@ -1,4 +1,3 @@
-    // variaveis globais bara definir mesma altura para resultados-pesquisa
 const grupoSintomas = document.querySelector('.grupos-sintomas');
 const resultadosPesquisa = document.querySelector('#resultados-pesquisa');
 
