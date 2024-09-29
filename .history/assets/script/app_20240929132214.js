@@ -164,7 +164,7 @@ function removerSintomaEscolhido(sintoma) {
             div.remove();
         }
     });
-    
+
     // Reexibir o sintoma na lista de pesquisa ou na lista de grupo
     let resultadosSintomasDiv = document.getElementById("resultados-pesquisa");
 
@@ -176,14 +176,6 @@ function removerSintomaEscolhido(sintoma) {
 
     divSintoma.textContent = sintoma.titulo_sintoma;
     divSintoma.addEventListener('click', () => adicionarSintomaEscolhido(sintoma, grupoId));
-
-    let sintomasEncontrados = document.querySelectorAll('.sintoma-item');
-
-    sintomasEncontrados.forEach(item => {
-        if (item.textContent === sintoma.titulo_sintoma) {
-            item.classList.remove('selecionado');
-        }
-    });
 
     atualizarDoencasRelacionadas();
 }

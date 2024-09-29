@@ -258,23 +258,6 @@ footer p a:hover {
     font-weight: bolder;
 }
 
-.sintoma-item.selecionado::after {
-    content: '\2713'; /* Caractere de check */
-    position: absolute;
-    top: 50%;
-    right: 10px;
-    transform: translateY(-50%);
-    background-color: green;
-    color: white;
-    border-radius: 50%;
-    width: 20px;
-    height: 20px;
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    font-size: 14px;
-}
-
 .sintoma-item:hover {
     opacity: 0.8;
 }
