@@ -153,7 +153,7 @@ function adicionarSintomaEscolhido(sintoma, grupoId) {
         }
     });
 
-    atualizarDoencasRelacionadas();
+    mostrarDoencasRelacionadas();
 }
 
 function removerSintomaEscolhido(sintoma) {
@@ -179,43 +179,36 @@ function removerSintomaEscolhido(sintoma) {
     divSintoma.addEventListener('click', () => adicionarSintomaEscolhido(sintoma, grupoId));
     resultadosSintomasDiv.appendChild(divSintoma);
 
-    atualizarDoencasRelacionadas();
+    mostrarDoencasRelacionadas();
 }
 
-function atualizarDoencasRelacionadas() {
-    // Captura os sintomas escolhidos como um array de strings
-    let sintomasEscolhidos = Array.from(document.getElementById("sintomas-escolhidos").children)
-        .map(div => div.textContent.toLowerCase()); // Convertendo para minúsculas para facilitar a comparação
+function mostrarDoencasRelacionadas() {
+    let sintomasEscolhidosDiv = document.getElementById("sintomas-escolhidos");
+    let sintomasEscolhidos = Array.from(sintomasEscolhidosDiv.children).map(div => div.textContent.trim().toLowerCase());
 
     let resultadosDoencasDiv = document.getElementById("resultados-doencas");
-    resultadosDoencasDiv.innerHTML = ""; // Limpar doenças anteriores
+    resultadosDoencasDiv.innerHTML = ""; // Limpar resultados anteriores
 
-    if (sintomasEscolhidos.length === 0) {
-        resultadosDoencasDiv.innerHTML = "<p>Nenhum sintoma selecionado.</p>";
-        return;
-    }
+    // Percorre cada doença no array dataDoencas
+    dataDoencas.forEach(doenca => {
+        // Divide os sintomas da doença em um array e remove espaços extras
+        let sintomasDoenca = doenca.sintomas.toLowerCase().split(',').map(s => s.trim());
 
-    // Filtrando as doenças relacionadas com base nos sintomas
-    let doencasRelacionadas = dataDoencas.filter(doenca => 
-        sintomasEscolhidos.every(sintoma => 
-            doenca.sintomas.toLowerCase().includes(sintoma) // Verifica se cada sintoma escolhido está presente na string de sintomas da doença
-        )
-    );
+        // Verifica se todos os sintomas escolhidos estão incluídos nos sintomas da doença
+        let correspondeSintomas = sintomasEscolhidos.every(sintomaEscolhido => 
+            sintomasDoenca.includes(sintomaEscolhido)
+        );
 
-    // Exibe o resultado da filtragem
-    if (doencasRelacionadas.length === 0) {
-        resultadosDoencasDiv.innerHTML = "<p>Nenhuma doença relacionada encontrada.</p>";
-    } else {
-        doencasRelacionadas.forEach(doenca => {
-            let divDoenca = document.createElement('div');
-            divDoenca.className = 'doenca-item';
-            divDoenca.innerHTML = `
-                <h4>${doenca.titulo}</h4>
-                <p>${doenca.descricao}</p>
-                <a href="${doenca.link}" target="_blank">Mais informações</a>
-            `;
-            resultadosDoencasDiv.appendChild(divDoenca);
-        });
-    }
+        // Se todos os sintomas escolhidos estiverem presentes, exibe a doença
+        if (correspondeSintomas) {
+            resultadosDoencasDiv.innerHTML += `
+                <div class="item-resultado">
+                    <center><h2 class="black-ops-one-regular">${doenca.titulo}</h2></center>
+                    <h4 class="electrolize-regular">Descrição</h4>
+                    <p class="descricao-meta">${doenca.descricao}</p>
+                    <h4 class="electrolize-regular">Sintomas</h4>
+                    <p class="descricao-meta">${doenca.sintomas}</p>
+                </div>`;
+        }
+    });
 }
-
