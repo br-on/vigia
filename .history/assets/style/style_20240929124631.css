@@ -170,7 +170,7 @@ footer p a:hover {
     margin-bottom: 20px; /* Espaçamento entre os itens */
     box-shadow: 0px 4px 8px rgba(0, 0, 0, 0.05); /* Sombra leve */
     transition: transform 0.3s ease, box-shadow 0.3s ease; /* Transição suave */
-    width: calc(100% - 20px);
+    width: calc(100% - 10px);
 }
 
 /* Efeito hover nos itens */
