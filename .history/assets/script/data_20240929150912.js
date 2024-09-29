@@ -93,7 +93,7 @@ let dataDoencas = [
     {
         titulo: "Febre Maculosa",
         descricao: "Doença bacteriana transmitida por carrapatos, que pode causar febre alta, dores no corpo e manchas vermelhas na pele.",
-        sintomas: "Febre, Cefaléia, Mialgias (dor muscular), Picada de carrapatos, Máculo-papular, Manifestações hemorrágicas",
+        sintomas: "Febre, Cefaléia, Mialgia, dor muscular, manchas vermelhas na pele.",
         prevencao: "Evitar contato com carrapatos, uso de roupas protetoras.",
         tratamento: "Antibióticos, principalmente a doxiciclina.",
         tags: "febre maculosa carrapato manchas vermelhas antibióticos",
@@ -102,7 +102,7 @@ let dataDoencas = [
     {
         titulo: "Febre Tifóide",
         descricao: "Doença bacteriana causada pela ingestão de alimentos ou água contaminados com a bactéria Salmonella Typhi.",
-        sintomas: "Febre, Cefaléia, Mal-estar, dor abdominal, Anorexia, Dissociação pulso-temperatura, Constipação, Diarréia, Tosse seca, Roséolas tíficas",
+        sintomas: "Febre prolongada, dor abdominal, diarreia ou constipação.",
         prevencao: "Higiene adequada, saneamento básico, vacinação.",
         tratamento: "Antibióticos, principalmente ciprofloxacina ou azitromicina.",
         tags: "febre tifóide salmonella alimentos água contaminada",

@@ -12,7 +12,7 @@ let dataDoencas = [
     {
         titulo: "Botulismo",
         descricao: "Intoxicação grave causada por toxinas produzidas pela bactéria Clostridium botulinum.",
-        sintomas: "Paralisia flácida aguda, Paralisia muscular, Diplopia, Visão turva, Ptose palpebral, Boca seca, Disartria, Disfagia, Dispnéia",
+        sintomas: "Paralisia flácida aguda, Paralisia muscular, dificuldade para respirar, Diplopia, Visão turva, Ptose palpebral, Boca seca, Disartria, Disfagia, Dispnéia",
         prevencao: "Manter alimentos em boas condições, evitar enlatados estufados.",
         tratamento: "Antitoxina botulínica e suporte respiratório.",
         tags: "botulismo intoxicação enlatado",
@@ -30,7 +30,7 @@ let dataDoencas = [
     {
         titulo: "Dengue",
         descricao: "Doença viral transmitida pelo mosquito Aedes aegypti, que causa febre alta, dores no corpo e nas articulações.",
-        sintomas: "Febre, Náuseas, Vômitos, Exantema, Mialgias (dor muscular), Cefaléia, Dor retroorbital, Petéquias, Prova do laço positiva, Leucopenia, manchas vermelhas na pele ",
+        sintomas: "Febre, Náuseas, Vômitos, Exantema, dores musculares, manchas vermelhas na pele, sangramentos, dores no corpo, ",
         prevencao: "Eliminar criadouros do mosquito, uso de repelentes.",
         tratamento: "Hidratação e controle dos sintomas; sem tratamento específico.",
         tags: "dengue febre mosquito Aedes aegypti arboviroses",
@@ -48,7 +48,7 @@ let dataDoencas = [
     {
         titulo: "Doença de Chagas Aguda",
         descricao: "Infecção causada pelo protozoário Trypanosoma cruzi, transmitido pelo inseto barbeiro.",
-        sintomas: "Febre, Icterícia, Manifestações hemorrágicas,",
+        sintomas: "Febre, inchaço no local da picada, aumento do fígado e do baço.",
         prevencao: "Melhoria das condições de moradia, uso de inseticidas.",
         tratamento: "Antiparasitários e controle dos sintomas.",
         tags: "chagas barbeiro protozoário infecção",
@@ -75,7 +75,7 @@ let dataDoencas = [
     {
         titulo: "Febre de Chikungunya",
         descricao: "Doença viral transmitida pelos mosquitos Aedes aegypti e Aedes albopictus, caracterizada por febre e dor nas articulações.",
-        sintomas: "Febre, Artralgia, Artrite intensa,",
+        sintomas: "Febre alta, dor intensa nas articulações, dor muscular, dor de cabeça.",
         prevencao: "Evitar acúmulo de água parada e eliminar criadouros de mosquitos.",
         tratamento: "Tratamento sintomático com analgésicos e hidratação.",
         tags: "febre chikungunya mosquito dor nas articulações",
@@ -84,7 +84,7 @@ let dataDoencas = [
     {
         titulo: "Febre do Nilo Ocidental",
         descricao: "Doença viral transmitida por mosquitos, que pode causar febre, dores no corpo e, em casos graves, inflamação no cérebro.",
-        sintomas: "Febre, Encefalite, Paralisia flácida aguda, Manifestações neurológicas de provável etiologia viral,",
+        sintomas: "Febre, dor de cabeça, dores no corpo, rigidez no pescoço.",
         prevencao: "Uso de repelentes e evitar áreas com infestação de mosquitos.",
         tratamento: "Não há tratamento específico, apenas controle dos sintomas.",
         tags: "febre nilo ocidental mosquito inflamação cerebral",
@@ -93,7 +93,7 @@ let dataDoencas = [
     {
         titulo: "Febre Maculosa",
         descricao: "Doença bacteriana transmitida por carrapatos, que pode causar febre alta, dores no corpo e manchas vermelhas na pele.",
-        sintomas: "Febre, Cefaléia, Mialgias (dor muscular), Picada de carrapatos, Máculo-papular, Manifestações hemorrágicas",
+        sintomas: "Febre alta, dor muscular, manchas vermelhas na pele.",
         prevencao: "Evitar contato com carrapatos, uso de roupas protetoras.",
         tratamento: "Antibióticos, principalmente a doxiciclina.",
         tags: "febre maculosa carrapato manchas vermelhas antibióticos",
@@ -102,7 +102,7 @@ let dataDoencas = [
     {
         titulo: "Febre Tifóide",
         descricao: "Doença bacteriana causada pela ingestão de alimentos ou água contaminados com a bactéria Salmonella Typhi.",
-        sintomas: "Febre, Cefaléia, Mal-estar, dor abdominal, Anorexia, Dissociação pulso-temperatura, Constipação, Diarréia, Tosse seca, Roséolas tíficas",
+        sintomas: "Febre prolongada, dor abdominal, diarreia ou constipação.",
         prevencao: "Higiene adequada, saneamento básico, vacinação.",
         tratamento: "Antibióticos, principalmente ciprofloxacina ou azitromicina.",
         tags: "febre tifóide salmonella alimentos água contaminada",

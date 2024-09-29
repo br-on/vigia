@@ -26,13 +26,13 @@ const dataSintomas = [
     {
         titulo_sintoma: "Artralgia",
         descricao_sintoma: "Dor nas articulações sem inflamação visível.",
-        grupo_sintoma: "musculoesqueleticos",
+        grupo_sintoma: "musculoesqueléticos",
         tags: "músculos, articulações, ossos, artralgia, dor"
     },
     {
         titulo_sintoma: "Artrite intensa",
         descricao_sintoma: "Inflamação severa das articulações, causando dor e rigidez.",
-        grupo_sintoma: "musculoesqueleticos",
+        grupo_sintoma: "musculoesqueléticos",
         tags: "músculos, articulações, ossos, artralgia, dor"
     },
     {
@@ -300,12 +300,6 @@ const dataSintomas = [
         tags: "gravidez, malformação, congênito, recém-nascido"
     },
     {
-        titulo_sintoma: "manchas vermelhas na pele",
-        descricao_sintoma: "manchas vermelhas",
-        grupo_sintoma: "dermatologicos",
-        tags: "pintinhas vermelhas, mancha na pele"
-    },
-    {
         titulo_sintoma: "Manifestações hemorrágicas",
         descricao_sintoma: "Sinais de sangramento anormal, como hematomas e petéquias.",
         grupo_sintoma: "cardiacos-circulatorios",
@@ -318,7 +312,7 @@ const dataSintomas = [
         tags: "nervoso, cérebro, cognição, paralisia, convulsão"
     },
     {
-        titulo_sintoma: "Mialgias (dor muscular)",
+        titulo_sintoma: "Mialgias",
         descricao_sintoma: "Dor muscular generalizada.",
         grupo_sintoma: "musculoesqueleticos",
         tags: "músculos, articulações, ossos, artralgia, dor"

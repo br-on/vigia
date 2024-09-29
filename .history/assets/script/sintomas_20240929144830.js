@@ -26,13 +26,13 @@ const dataSintomas = [
     {
         titulo_sintoma: "Artralgia",
         descricao_sintoma: "Dor nas articulações sem inflamação visível.",
-        grupo_sintoma: "musculoesqueleticos",
+        grupo_sintoma: "musculoesqueléticos",
         tags: "músculos, articulações, ossos, artralgia, dor"
     },
     {
         titulo_sintoma: "Artrite intensa",
         descricao_sintoma: "Inflamação severa das articulações, causando dor e rigidez.",
-        grupo_sintoma: "musculoesqueleticos",
+        grupo_sintoma: "musculoesqueléticos",
         tags: "músculos, articulações, ossos, artralgia, dor"
     },
     {

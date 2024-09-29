@@ -102,7 +102,7 @@ let dataDoencas = [
     {
         titulo: "Febre Tifóide",
         descricao: "Doença bacteriana causada pela ingestão de alimentos ou água contaminados com a bactéria Salmonella Typhi.",
-        sintomas: "Febre, Cefaléia, Mal-estar, dor abdominal, Anorexia, Dissociação pulso-temperatura, Constipação, Diarréia, Tosse seca, Roséolas tíficas",
+        sintomas: "Febre, Cefaléia, Mal-estar, dor abdominal, Anorexia,  diarreia ou constipação.",
         prevencao: "Higiene adequada, saneamento básico, vacinação.",
         tratamento: "Antibióticos, principalmente ciprofloxacina ou azitromicina.",
         tags: "febre tifóide salmonella alimentos água contaminada",
