@@ -43,9 +43,10 @@ function exibirSintomasPorGrupo(grupoId) {
     const sintomasEscolhidos = Array.from(document.getElementById("sintomas-escolhidos").children)
         .map(div => div.textContent);
 
-    // Filtrar sintomas pelo grupo clicado
+    // Filtrar sintomas pelo grupo clicado e que não foram escolhidos
     const sintomasEncontrados = dataSintomas.filter(sintoma => 
-        sintoma.grupo_sintoma.toLowerCase() === grupoId.toLowerCase()
+        sintoma.grupo_sintoma.toLowerCase() === grupoId.toLowerCase() &&
+        !sintomasEscolhidos.includes(sintoma.titulo_sintoma)
     );
 
     // Exibir sintomas encontrados ou mensagem de "nenhum sintoma encontrado"
@@ -55,15 +56,7 @@ function exibirSintomasPorGrupo(grupoId) {
             divSintoma.className = 'sintoma-item';
             divSintoma.style.backgroundColor = coresPorGrupo[grupoId.toLowerCase()] || '#ccc';
             divSintoma.textContent = sintoma.titulo_sintoma;
-
-            // Verifica se o sintoma já foi escolhido e adiciona a classe 'selecionado'
-            if (sintomasEscolhidos.includes(sintoma.titulo_sintoma)) {
-                divSintoma.classList.add('selecionado');
-            }
-
-            // Adiciona o evento de clique para adicionar/remover o sintoma]
             divSintoma.addEventListener('click', () => adicionarSintomaEscolhido(sintoma, grupoId));
-            
             resultadosSintomasDiv.appendChild(divSintoma);
         });
     } else {
@@ -93,10 +86,8 @@ function mostrarGrupos() {
 }
 
 function pesquisar() {
-    // esconde lista de grupos e exibe resultados de pesquisa
     document.getElementById('grupos-sintomas').style.display = 'none';
     document.getElementById('resultados-pesquisa').style.display = 'block';
-    
     let campoPesquisa = document.getElementById("campo-pesquisa").value.toLowerCase();
     let resultadosSintomasDiv = document.getElementById("resultados-pesquisa");
     resultadosSintomasDiv.innerHTML = ""; // Limpar resultados anteriores
@@ -107,14 +98,15 @@ function pesquisar() {
         return;
     }
 
-    // Obter sintomas já escolhidos para aplicar classe 'selecionado'
+    // Obter sintomas já escolhidos
     let sintomasEscolhidos = Array.from(document.getElementById("sintomas-escolhidos").children)
-        .map(div => div.textContent.trim());
+        .map(div => div.textContent);
 
-    // Filtrar sintomas que correspondem ao texto digitado (exibindo todos, mesmo os já escolhidos)
+    // Filtrar sintomas que correspondem ao texto digitado e que não foram escolhidos
     let sintomasEncontrados = dataSintomas.filter(sintoma => 
-        sintoma.titulo_sintoma.toLowerCase().includes(campoPesquisa) ||
-        sintoma.grupo_sintoma.toLowerCase().includes(campoPesquisa)
+        (sintoma.titulo_sintoma.toLowerCase().includes(campoPesquisa) ||
+        sintoma.grupo_sintoma.toLowerCase().includes(campoPesquisa)) &&
+        sintomasEscolhidos.includes(sintoma.titulo_sintoma)
     );
 
     //verifica se encontrou algum sintoma correspondente
@@ -124,18 +116,12 @@ function pesquisar() {
         sintomasEncontrados.forEach(sintoma => {
             let divSintoma = document.createElement('div');
             divSintoma.className = 'sintoma-item';
-
-            // Verifica se o sintoma já foi escolhido e adiciona a classe 'selecionado'
-            if (sintomasEscolhidos.includes(sintoma.titulo_sintoma)) {
-                divSintoma.classList.add('selecionado');
-            }
             
             let grupoId = sintoma.grupo_sintoma.toLowerCase().replace(/\s/g, '-');
             divSintoma.style.backgroundColor = coresPorGrupo[grupoId] || '#ccc';
 
             divSintoma.textContent = sintoma.titulo_sintoma;
             divSintoma.addEventListener('click', () => adicionarSintomaEscolhido(sintoma, grupoId));
-
             resultadosSintomasDiv.appendChild(divSintoma);
         });
     }

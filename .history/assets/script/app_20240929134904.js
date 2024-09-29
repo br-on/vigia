@@ -45,7 +45,7 @@ function exibirSintomasPorGrupo(grupoId) {
 
     // Filtrar sintomas pelo grupo clicado
     const sintomasEncontrados = dataSintomas.filter(sintoma => 
-        sintoma.grupo_sintoma.toLowerCase() === grupoId.toLowerCase()
+        sintoma.grupo_sintoma.toLowerCase() === grupoId.toLowerCase() &&
     );
 
     // Exibir sintomas encontrados ou mensagem de "nenhum sintoma encontrado"
@@ -55,15 +55,7 @@ function exibirSintomasPorGrupo(grupoId) {
             divSintoma.className = 'sintoma-item';
             divSintoma.style.backgroundColor = coresPorGrupo[grupoId.toLowerCase()] || '#ccc';
             divSintoma.textContent = sintoma.titulo_sintoma;
-
-            // Verifica se o sintoma já foi escolhido e adiciona a classe 'selecionado'
-            if (sintomasEscolhidos.includes(sintoma.titulo_sintoma)) {
-                divSintoma.classList.add('selecionado');
-            }
-
-            // Adiciona o evento de clique para adicionar/remover o sintoma]
             divSintoma.addEventListener('click', () => adicionarSintomaEscolhido(sintoma, grupoId));
-            
             resultadosSintomasDiv.appendChild(divSintoma);
         });
     } else {
