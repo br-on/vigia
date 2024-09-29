@@ -110,7 +110,7 @@ function pesquisar() {
 
     //verifica se encontrou algum sintoma correspondente
     if (sintomasEncontrados.length === 0) {
-        resultadosSintomasDiv.innerHTML = "<p>Nenhum sintoma encontrado.</p>";
+        resultadosSintomasDiv.innerHTML = "<p style="color:red">Nenhum sintoma encontrado.</p>";
     } else {
         sintomasEncontrados.forEach(sintoma => {
             let divSintoma = document.createElement('div');

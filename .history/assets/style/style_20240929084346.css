@@ -157,10 +157,6 @@ footer p a:hover {
     padding: 20px;
 }
 
-.resultado-pesquisa p {
-    color:hsl(64, 89%, 64%)
-}
-
 /* Estilo dos itens de resultado */
 .item-resultado {
     border: 3px solid #e0e0e0; /* Borda leve ao redor do item */

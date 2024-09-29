@@ -155,10 +155,7 @@ footer p a:hover {
     max-height: 80vh; /* Limita a altura para que os resultados não ocupem a tela inteira */
     overflow-y: auto; /* Ativa a barra de rolagem vertical */
     padding: 20px;
-}
-
-.resultado-pesquisa p {
-    color:hsl(64, 89%, 64%)
+    color: red;
 }
 
 /* Estilo dos itens de resultado */

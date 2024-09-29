@@ -123,7 +123,6 @@ function pesquisar() {
             divSintoma.addEventListener('click', () => adicionarSintomaEscolhido(sintoma, grupoId));
             resultadosSintomasDiv.appendChild(divSintoma);
         });
-    }
 }
 
 function adicionarSintomaEscolhido(sintoma, grupoId) {
