@@ -261,7 +261,7 @@ footer p a:hover {
 .sintoma-item.selecionado::after {
     content: '\2713'; /* Caractere de check */
     position: absolute;
-    top: 5%;
+    top: 10%;
     right: 0;
     transform: translateY(-50%);
     background-color: green;
