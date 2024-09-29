@@ -93,7 +93,7 @@ let dataDoencas = [
     {
         titulo: "Febre Maculosa",
         descricao: "Doença bacteriana transmitida por carrapatos, que pode causar febre alta, dores no corpo e manchas vermelhas na pele.",
-        sintomas: "Febre, Cefaléia, Mialgias (dor muscular), Picada de carrapatos, Exantema Maculopapular, Manifestações hemorrágicas",
+        sintomas: "Febre, Cefaléia, Mialgias (dor muscular), Picada de carrapatos, Máculo-papular, Manifestações hemorrágicas",
         prevencao: "Evitar contato com carrapatos, uso de roupas protetoras.",
         tratamento: "Antibióticos, principalmente a doxiciclina.",
         tags: "febre maculosa carrapato manchas vermelhas antibióticos",
@@ -102,7 +102,7 @@ let dataDoencas = [
     {
         titulo: "Febre Tifóide",
         descricao: "Doença bacteriana causada pela ingestão de alimentos ou água contaminados com a bactéria Salmonella Typhi.",
-        sintomas: "Febre, Cefaléia, Mal-estar, dor abdominal, Anorexia, Dissociação pulso-temperatura, Constipação, Diarréia, Tosse, Tosse seca, Roséolas tíficas",
+        sintomas: "Febre, Cefaléia, Mal-estar, dor abdominal, Anorexia, Dissociação pulso-temperatura, Constipação, Diarréia, Tosse seca, Roséolas tíficas",
         prevencao: "Higiene adequada, saneamento básico, vacinação.",
         tratamento: "Antibióticos, principalmente ciprofloxacina ou azitromicina.",
         tags: "febre tifóide salmonella alimentos água contaminada",
@@ -183,7 +183,7 @@ let dataDoencas = [
     {
         titulo: "Leptospirose",
         descricao: "A leptospirose é uma doença infecciosa causada pela bactéria Leptospira, transmitida principalmente por contato com água contaminada.",
-        sintomas: "Febre, Cefaléia, Mialgias (dor muscular)",
+        sintomas: "Febre, dor de cabeça, dor muscular, calafrios e, em casos graves, icterícia, insuficiência renal.",
         prevencao: "Evitar contato com água potencialmente contaminada, controle de roedores e uso de roupas protetoras.",
         tratamento: "Antibióticos como a doxiciclina ou penicilina, e tratamento de suporte em casos graves.",
         tags: "leptospirose, leptospira, febre",
@@ -192,7 +192,7 @@ let dataDoencas = [
     {
         titulo: "Malária",
         descricao: "A malária é uma doença infecciosa causada por protozoários do gênero Plasmodium, transmitida por mosquitos infectados.",
-        sintomas: "Febre, Cefaléia, Calafrios, Sudorese, Cansaço, Mialgias (dor muscular)",
+        sintomas: "Febre cíclica, calafrios, dor de cabeça, dor muscular, anemia.",
         prevencao: "Uso de mosquiteiros, repelentes, e profilaxia com medicamentos antimaláricos em áreas endêmicas.",
         tratamento: "Medicamentos antimaláricos como a cloroquina, artemisinina e derivados.",
         tags: "malária, plasmodium, mosquito",
@@ -201,7 +201,7 @@ let dataDoencas = [
     {
         titulo: "Meningite",
         descricao: "A meningite é uma inflamação das membranas que revestem o cérebro e a medula espinhal, causada por infecções virais, bacterianas ou fúngicas.",
-        sintomas: "Febre, Cefaléia, Vômitos, Rigidez de nuca, Sinais de irritação meníngea (Kernig e Brudzinski), Convulsão, Petéquias, Torpor",
+        sintomas: "Febre, dor de cabeça intensa, rigidez no pescoço, náuseas, vômitos.",
         prevencao: "Vacinação, especialmente contra Neisseria meningitidis e Haemophilus influenzae, e cuidados com higiene.",
         tratamento: "Antibióticos para meningite bacteriana e tratamento sintomático para meningite viral.",
         tags: "meningite, inflamação cerebral, meningococo",
@@ -219,7 +219,7 @@ let dataDoencas = [
     {
         titulo: "Paralisia Flácida Aguda/Poliomielite",
         descricao: "A paralisia flácida aguda é uma condição caracterizada pela fraqueza muscular súbita, muitas vezes associada ao poliovírus.",
-        sintomas: "Deficiência motora flácida súbita",
+        sintomas: "Fraqueza muscular súbita, paralisia, dor, febre.",
         prevencao: "Vacinação com a vacina oral contra poliomielite (VOP) ou vacina inativada (VIP).",
         tratamento: "Tratamento de suporte, fisioterapia e monitoramento contínuo.",
         tags: "poliomielite, paralisia, vacina",
@@ -228,7 +228,7 @@ let dataDoencas = [
     {
         titulo: "Peste",
         descricao: "A peste é uma doença infecciosa grave causada pela bactéria Yersinia pestis, transmitida por pulgas de roedores infectados.",
-        sintomas: "Presença de bubões, Adenite dolorosa, Tosse, Dispnéia, Dor no peito, Escarro muco-sanguinolento, Febre, Calafrios, Cefaléia, Dores no corpo, Fraqueza, Anorexia, Hipotensão, Pulso rápido/irregular",
+        sintomas: "Febre alta, calafrios, dor de cabeça, linfonodos inchados e doloridos (bubônica).",
         prevencao: "Controle de pulgas e roedores, uso de roupas protetoras e cuidados com a higiene.",
         tratamento: "Antibióticos como a streptomicina ou a doxiciclina, e tratamento de suporte.",
         tags: "peste bubônica, yersinia pestis, roedores",
@@ -237,7 +237,7 @@ let dataDoencas = [
     {
         titulo: "Raiva Humana",
         descricao: "A raiva humana é uma doença viral grave transmitida principalmente por mordidas de animais infectados, como cães.",
-        sintomas: "Encefalite rábica, Antecedentes de exposição à infecção pelo vírus rábico",
+        sintomas: "Febre, dor de cabeça, mal-estar, sintomas neurológicos como confusão e paralisia.",
         prevencao: "Vacinação pós-exposição após mordida de animal suspeito e vacinação preventiva para pessoas em risco.",
         tratamento: "Imunização pós-exposição com vacina anti-rábica e imunoglobulina.",
         tags: "raiva, vírus, vacinação",
@@ -246,7 +246,7 @@ let dataDoencas = [
     {
         titulo: "Rotavírus",
         descricao: "O rotavírus é um vírus que causa gastroenterite aguda, principalmente em crianças, com sintomas como diarreia e vômitos.",
-        sintomas: "Doença Diarréica Aguda",
+        sintomas: "Diarreia aquosa, vômitos, febre, dor abdominal.",
         prevencao: "Vacinação com a vacina oral contra rotavírus e medidas de higiene.",
         tratamento: "Reidratação oral e tratamento sintomático para diarreia e vômitos.",
         tags: "rotavírus, gastroenterite, vacinação",
@@ -255,7 +255,7 @@ let dataDoencas = [
     {
         titulo: "Rubéola",
         descricao: "A rubéola é uma infecção viral geralmente leve, mas pode causar complicações graves se ocorrer durante a gravidez.",
-        sintomas: "Febre, Exantema Maculopapular, Linfoadenopatia retroauricular, occipital e cervical",
+        sintomas: "Erupção cutânea, febre leve, sintomas semelhantes ao resfriado.",
         prevencao: "Vacinação com a vacina tríplice viral (sarampo, caxumba e rubéola).",
         tratamento: "Tratamento sintomático para febre e erupção cutânea.",
         tags: "rubéola, vírus, vacina tríplice viral",
@@ -264,7 +264,7 @@ let dataDoencas = [
     {
         titulo: "Sarampo",
         descricao: "O sarampo é uma doença viral altamente contagiosa que causa erupção cutânea e febre.",
-        sintomas: "Febre, Exantema Maculopapular, Tosse, Coriza, Conjuntivite",
+        sintomas: "Febre alta, erupção cutânea, tosse, coriza e conjuntivite.",
         prevencao: "Vacinação com a vacina tríplice viral e isolamento de casos.",
         tratamento: "Tratamento sintomático para febre e sintomas respiratórios.",
         tags: "sarampo, vírus, vacina tríplice viral",
@@ -273,7 +273,7 @@ let dataDoencas = [
     {
         titulo: "Sífilis Congênita",
         descricao: "A sífilis congênita é uma infecção transmitida da mãe para o bebê durante a gravidez, causada pela bactéria Treponema pallidum.",
-        sintomas: "",
+        sintomas: "Problemas de desenvolvimento, erupções cutâneas, anomalias ósseas no recém-nascido.",
         prevencao: "Tratamento adequado da sífilis durante a gravidez e acompanhamento pré-natal.",
         tratamento: "Antibióticos como a penicilina para a mãe e o bebê.",
         tags: "sífilis, Treponema pallidum, infecção congênita",
@@ -282,7 +282,7 @@ let dataDoencas = [
     {
         titulo: "Sífilis em Gestante",
         descricao: "Sífilis em gestante é a infecção pela bactéria Treponema pallidum durante a gravidez, que pode ser transmitida ao bebê.",
-        sintomas: "",
+        sintomas: "Úlceras genitais, erupções cutâneas, sintomas semelhantes à gripe.",
         prevencao: "Triagem e tratamento de sífilis durante o pré-natal.",
         tratamento: "Antibióticos como a penicilina para a mãe.",
         tags: "sífilis, Treponema pallidum, pré-natal",
@@ -291,7 +291,7 @@ let dataDoencas = [
     {
         titulo: "Síndrome da Rubéola Congênita",
         descricao: "A síndrome da rubéola congênita ocorre quando a rubéola é contraída pela mãe durante a gravidez e afeta o feto.",
-        sintomas: "",
+        sintomas: "Defeitos cardíacos, surdez, catarata, outras anomalias congênitas.",
         prevencao: "Vacinação pré-concepcional com a vacina tríplice viral.",
         tratamento: "Tratamento sintomático e acompanhamento das complicações.",
         tags: "síndrome da rubéola congênita, rubéola, vacinação",
@@ -300,7 +300,7 @@ let dataDoencas = [
     {
         titulo: "Surto",
         descricao: "Um surto é um aumento repentino no número de casos de uma doença em uma área específica ou população.",
-        sintomas: "",
+        sintomas: "Dependem da doença específica envolvida.",
         prevencao: "Monitoramento e controle de surtos, vacinação, e medidas de higiene pública.",
         tratamento: "Tratamento depende da doença específica e controle de transmissão.",
         tags: "surto, epidemia, controle de doenças",
@@ -309,7 +309,7 @@ let dataDoencas = [
     {
         titulo: "Surto Doenças Transmitidas por Alimentos - DTA",
         descricao: "Surto de doenças transmitidas por alimentos ocorre quando um grande número de pessoas é infectado por patógenos em alimentos contaminados.",
-        sintomas: "",
+        sintomas: "Diarreia, vômitos, dor abdominal, febre.",
         prevencao: "Segurança alimentar, controle de higiene e práticas adequadas de preparo de alimentos.",
         tratamento: "Tratamento sintomático, reidratação e, se necessário, antibióticos para patógenos específicos.",
         tags: "doenças alimentares, surto, segurança alimentar",
@@ -318,7 +318,7 @@ let dataDoencas = [
     {
         titulo: "Tétano Acidental",
         descricao: "O tétano acidental é uma infecção causada pela bactéria Clostridium tetani, geralmente adquirida através de feridas contaminadas.",
-        sintomas: "Disfagia, Trismo, Trismo, Riso sardônico, Opistótono, Contraturas musculares localizadas ou generalizadas com ou sem espasmos",
+        sintomas: "Espasmos musculares, rigidez, dificuldade para engolir, dor muscular.",
         prevencao: "Vacinação com a vacina contra tétano e cuidados com feridas.",
         tratamento: "Imunoglobulina anti-tetânica, antibióticos e tratamento de suporte para espasmos musculares.",
         tags: "tétano, Clostridium tetani, vacinação",
@@ -327,7 +327,7 @@ let dataDoencas = [
     {
         titulo: "Tétano Neonatal",
         descricao: "O tétano neonatal é uma forma de tétano que afeta recém-nascidos, geralmente devido à infecção da umbilical.",
-        sintomas: "",
+        sintomas: "Rigidez muscular, dificuldade para alimentar, irritabilidade.",
         prevencao: "Vacinação adequada da mãe durante a gestação e cuidados com o cordão umbilical.",
         tratamento: "Imunoglobulina anti-tetânica, antibióticos e suporte intensivo.",
         tags: "tétano neonatal, Clostridium tetani, prevenção",
@@ -336,7 +336,7 @@ let dataDoencas = [
     {
         titulo: "Tracoma",
         descricao: "O tracoma é uma infecção ocular crônica causada pela bactéria Chlamydia trachomatis, que pode levar à cegueira se não tratada.",
-        sintomas: "",
+        sintomas: "Olhos vermelhos, secreção ocular, cicatrização da conjuntiva.",
         prevencao: "Higiene ocular adequada e tratamento com antibióticos.",
         tratamento: "Antibióticos como a azitromicina e cirurgias para corrigir deformidades oculares.",
         tags: "tracoma, Chlamydia trachomatis, infecção ocular",
@@ -345,7 +345,7 @@ let dataDoencas = [
     {
         titulo: "Tuberculose",
         descricao: "A tuberculose é uma doença bacteriana infecciosa causada pelo Mycobacterium tuberculosis, afetando principalmente os pulmões.",
-        sintomas: "Baciloscopia positiva, Teste rápido molecular para tuberculose positivo",
+        sintomas: "Tosse persistente, febre, suores noturnos, perda de peso.",
         prevencao: "Vacinação com BCG e tratamento adequado de pacientes infectados.",
         tratamento: "Antibióticos como rifampicina, isoniazida, pirazinamida e etambutol.",
         tags: "tuberculose, Mycobacterium tuberculosis, vacinação BCG",
@@ -354,7 +354,7 @@ let dataDoencas = [
     {
         titulo: "Violência Interpessoal/Autoprovocada",
         descricao: "A violência interpessoal e autoprovocada inclui agressões físicas e psicológicas realizadas por indivíduos contra si mesmos ou outros.",
-        sintomas: "",
+        sintomas: "Lesões físicas, estresse psicológico, comportamentos autodestrutivos.",
         prevencao: "Programas de conscientização, suporte psicológico e estratégias de prevenção de violência.",
         tratamento: "Tratamento psicológico, apoio social e intervenção médica conforme necessário.",
         tags: "violência, agressão, suporte psicológico",
@@ -363,7 +363,7 @@ let dataDoencas = [
     {
         titulo: "Zika Vírus",
         descricao: "O zika vírus é um vírus transmitido por mosquitos que pode causar febre e erupção cutânea, com risco de complicações neurológicas e síndromes congênitas.",
-        sintomas: "Febre, Distúrbios neurológicos em adultos, Malformação congênita em recém-nascidos, Exantema Maculopapular, Artralgia, Conjuntivite não Purulenta, Cefaléia, Mialgias (dor muscular), Prurido",
+        sintomas: "Febre baixa, erupção cutânea, dor nas articulações, conjuntivite, Malformação congênita em recém-nascidos",
         prevencao: "Uso de repelentes, roupas protetoras e eliminação de criadouros de mosquitos.",
         tratamento: "Tratamento sintomático para febre e erupção cutânea.",
         tags: "zika vírus, mosquito, prevenção",
@@ -371,4 +371,3 @@ let dataDoencas = [
     },
     
 ];
-Máculo-papular

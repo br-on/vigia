@@ -72,12 +72,6 @@ const dataSintomas = [
         tags: "pele, mucosa, lesões, úlceras, exantema"
     },
     {
-        titulo_sintoma: "Conjuntivite não Purulenta",
-        descricao_sintoma: "uma forma de conjuntivite que não envolve a produção de pus.",
-        grupo_sintoma: "dermatologicos",
-        tags: "pele, mucosa, lesões, úlceras, exantema"
-    },
-    {
         titulo_sintoma: "Constipação",
         descricao_sintoma: "Dificuldade em evacuar, com fezes duras e secas.",
         grupo_sintoma: "digestivos",
@@ -217,7 +211,7 @@ const dataSintomas = [
     },
     {
         titulo_sintoma: "Exantema Maculopapular",
-        descricao_sintoma: "Erupção cutânea caracterizada por manchas e pápulas. combinação de manchas (máculas) e pequenas elevações (pápulas).",
+        descricao_sintoma: "Erupção cutânea que pode indicar uma infecção ou reação alérgica. combinação de manchas (máculas) e pequenas elevações (pápulas).",
         grupo_sintoma: "dermatologicos",
         tags: "pele, mucosa, lesões, úlceras, exantema maculas, papulas"
     },
@@ -292,6 +286,12 @@ const dataSintomas = [
         descricao_sintoma: "Aumento dos linfonodos nas regiões retroauricular, occipital e cervical.",
         grupo_sintoma: "infecciosos-febris",
         tags: "infecção, febre, vírus, bactéria, toxinas"
+    },
+    {
+        titulo_sintoma: "Máculo-papular",
+        descricao_sintoma: "Erupção cutânea caracterizada por manchas e pápulas.",
+        grupo_sintoma: "dermatologicos",
+        tags: "pele, mucosa, lesões, úlceras, exantema"
     },
     {
         titulo_sintoma: "Mal-estar",

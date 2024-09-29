@@ -72,12 +72,6 @@ const dataSintomas = [
         tags: "pele, mucosa, lesões, úlceras, exantema"
     },
     {
-        titulo_sintoma: "Conjuntivite não Purulenta",
-        descricao_sintoma: "uma forma de conjuntivite que não envolve a produção de pus.",
-        grupo_sintoma: "dermatologicos",
-        tags: "pele, mucosa, lesões, úlceras, exantema"
-    },
-    {
         titulo_sintoma: "Constipação",
         descricao_sintoma: "Dificuldade em evacuar, com fezes duras e secas.",
         grupo_sintoma: "digestivos",

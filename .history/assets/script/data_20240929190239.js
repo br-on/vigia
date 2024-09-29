@@ -93,7 +93,7 @@ let dataDoencas = [
     {
         titulo: "Febre Maculosa",
         descricao: "Doença bacteriana transmitida por carrapatos, que pode causar febre alta, dores no corpo e manchas vermelhas na pele.",
-        sintomas: "Febre, Cefaléia, Mialgias (dor muscular), Picada de carrapatos, Exantema Maculopapular, Manifestações hemorrágicas",
+        sintomas: "Febre, Cefaléia, Mialgias (dor muscular), Picada de carrapatos, Máculo-papular, Manifestações hemorrágicas",
         prevencao: "Evitar contato com carrapatos, uso de roupas protetoras.",
         tratamento: "Antibióticos, principalmente a doxiciclina.",
         tags: "febre maculosa carrapato manchas vermelhas antibióticos",
@@ -345,7 +345,7 @@ let dataDoencas = [
     {
         titulo: "Tuberculose",
         descricao: "A tuberculose é uma doença bacteriana infecciosa causada pelo Mycobacterium tuberculosis, afetando principalmente os pulmões.",
-        sintomas: "Baciloscopia positiva, Teste rápido molecular para tuberculose positivo",
+        sintomas: "Tosse persistente, febre, suores noturnos, perda de peso.",
         prevencao: "Vacinação com BCG e tratamento adequado de pacientes infectados.",
         tratamento: "Antibióticos como rifampicina, isoniazida, pirazinamida e etambutol.",
         tags: "tuberculose, Mycobacterium tuberculosis, vacinação BCG",
@@ -354,7 +354,7 @@ let dataDoencas = [
     {
         titulo: "Violência Interpessoal/Autoprovocada",
         descricao: "A violência interpessoal e autoprovocada inclui agressões físicas e psicológicas realizadas por indivíduos contra si mesmos ou outros.",
-        sintomas: "",
+        sintomas: "Lesões físicas, estresse psicológico, comportamentos autodestrutivos.",
         prevencao: "Programas de conscientização, suporte psicológico e estratégias de prevenção de violência.",
         tratamento: "Tratamento psicológico, apoio social e intervenção médica conforme necessário.",
         tags: "violência, agressão, suporte psicológico",
@@ -363,7 +363,7 @@ let dataDoencas = [
     {
         titulo: "Zika Vírus",
         descricao: "O zika vírus é um vírus transmitido por mosquitos que pode causar febre e erupção cutânea, com risco de complicações neurológicas e síndromes congênitas.",
-        sintomas: "Febre, Distúrbios neurológicos em adultos, Malformação congênita em recém-nascidos, Exantema Maculopapular, Artralgia, Conjuntivite não Purulenta, Cefaléia, Mialgias (dor muscular), Prurido",
+        sintomas: "Febre baixa, erupção cutânea, dor nas articulações, conjuntivite, Malformação congênita em recém-nascidos",
         prevencao: "Uso de repelentes, roupas protetoras e eliminação de criadouros de mosquitos.",
         tratamento: "Tratamento sintomático para febre e erupção cutânea.",
         tags: "zika vírus, mosquito, prevenção",
@@ -371,4 +371,3 @@ let dataDoencas = [
     },
     
 ];
-Máculo-papular

@@ -93,7 +93,7 @@ let dataDoencas = [
     {
         titulo: "Febre Maculosa",
         descricao: "Doença bacteriana transmitida por carrapatos, que pode causar febre alta, dores no corpo e manchas vermelhas na pele.",
-        sintomas: "Febre, Cefaléia, Mialgias (dor muscular), Picada de carrapatos, Exantema Maculopapular, Manifestações hemorrágicas",
+        sintomas: "Febre, Cefaléia, Mialgias (dor muscular), Picada de carrapatos, Máculo-papular, Manifestações hemorrágicas",
         prevencao: "Evitar contato com carrapatos, uso de roupas protetoras.",
         tratamento: "Antibióticos, principalmente a doxiciclina.",
         tags: "febre maculosa carrapato manchas vermelhas antibióticos",
@@ -300,7 +300,7 @@ let dataDoencas = [
     {
         titulo: "Surto",
         descricao: "Um surto é um aumento repentino no número de casos de uma doença em uma área específica ou população.",
-        sintomas: "",
+        sintomas: "Dependem da doença específica envolvida.",
         prevencao: "Monitoramento e controle de surtos, vacinação, e medidas de higiene pública.",
         tratamento: "Tratamento depende da doença específica e controle de transmissão.",
         tags: "surto, epidemia, controle de doenças",
@@ -309,7 +309,7 @@ let dataDoencas = [
     {
         titulo: "Surto Doenças Transmitidas por Alimentos - DTA",
         descricao: "Surto de doenças transmitidas por alimentos ocorre quando um grande número de pessoas é infectado por patógenos em alimentos contaminados.",
-        sintomas: "",
+        sintomas: "Diarreia, vômitos, dor abdominal, febre.",
         prevencao: "Segurança alimentar, controle de higiene e práticas adequadas de preparo de alimentos.",
         tratamento: "Tratamento sintomático, reidratação e, se necessário, antibióticos para patógenos específicos.",
         tags: "doenças alimentares, surto, segurança alimentar",
@@ -318,7 +318,7 @@ let dataDoencas = [
     {
         titulo: "Tétano Acidental",
         descricao: "O tétano acidental é uma infecção causada pela bactéria Clostridium tetani, geralmente adquirida através de feridas contaminadas.",
-        sintomas: "Disfagia, Trismo, Trismo, Riso sardônico, Opistótono, Contraturas musculares localizadas ou generalizadas com ou sem espasmos",
+        sintomas: "Espasmos musculares, rigidez, dificuldade para engolir, dor muscular.",
         prevencao: "Vacinação com a vacina contra tétano e cuidados com feridas.",
         tratamento: "Imunoglobulina anti-tetânica, antibióticos e tratamento de suporte para espasmos musculares.",
         tags: "tétano, Clostridium tetani, vacinação",
@@ -327,7 +327,7 @@ let dataDoencas = [
     {
         titulo: "Tétano Neonatal",
         descricao: "O tétano neonatal é uma forma de tétano que afeta recém-nascidos, geralmente devido à infecção da umbilical.",
-        sintomas: "",
+        sintomas: "Rigidez muscular, dificuldade para alimentar, irritabilidade.",
         prevencao: "Vacinação adequada da mãe durante a gestação e cuidados com o cordão umbilical.",
         tratamento: "Imunoglobulina anti-tetânica, antibióticos e suporte intensivo.",
         tags: "tétano neonatal, Clostridium tetani, prevenção",
@@ -336,7 +336,7 @@ let dataDoencas = [
     {
         titulo: "Tracoma",
         descricao: "O tracoma é uma infecção ocular crônica causada pela bactéria Chlamydia trachomatis, que pode levar à cegueira se não tratada.",
-        sintomas: "",
+        sintomas: "Olhos vermelhos, secreção ocular, cicatrização da conjuntiva.",
         prevencao: "Higiene ocular adequada e tratamento com antibióticos.",
         tratamento: "Antibióticos como a azitromicina e cirurgias para corrigir deformidades oculares.",
         tags: "tracoma, Chlamydia trachomatis, infecção ocular",
@@ -345,7 +345,7 @@ let dataDoencas = [
     {
         titulo: "Tuberculose",
         descricao: "A tuberculose é uma doença bacteriana infecciosa causada pelo Mycobacterium tuberculosis, afetando principalmente os pulmões.",
-        sintomas: "Baciloscopia positiva, Teste rápido molecular para tuberculose positivo",
+        sintomas: "Tosse persistente, febre, suores noturnos, perda de peso.",
         prevencao: "Vacinação com BCG e tratamento adequado de pacientes infectados.",
         tratamento: "Antibióticos como rifampicina, isoniazida, pirazinamida e etambutol.",
         tags: "tuberculose, Mycobacterium tuberculosis, vacinação BCG",
@@ -354,7 +354,7 @@ let dataDoencas = [
     {
         titulo: "Violência Interpessoal/Autoprovocada",
         descricao: "A violência interpessoal e autoprovocada inclui agressões físicas e psicológicas realizadas por indivíduos contra si mesmos ou outros.",
-        sintomas: "",
+        sintomas: "Lesões físicas, estresse psicológico, comportamentos autodestrutivos.",
         prevencao: "Programas de conscientização, suporte psicológico e estratégias de prevenção de violência.",
         tratamento: "Tratamento psicológico, apoio social e intervenção médica conforme necessário.",
         tags: "violência, agressão, suporte psicológico",
@@ -363,7 +363,7 @@ let dataDoencas = [
     {
         titulo: "Zika Vírus",
         descricao: "O zika vírus é um vírus transmitido por mosquitos que pode causar febre e erupção cutânea, com risco de complicações neurológicas e síndromes congênitas.",
-        sintomas: "Febre, Distúrbios neurológicos em adultos, Malformação congênita em recém-nascidos, Exantema Maculopapular, Artralgia, Conjuntivite não Purulenta, Cefaléia, Mialgias (dor muscular), Prurido",
+        sintomas: "Febre baixa, erupção cutânea, dor nas articulações, conjuntivite, Malformação congênita em recém-nascidos",
         prevencao: "Uso de repelentes, roupas protetoras e eliminação de criadouros de mosquitos.",
         tratamento: "Tratamento sintomático para febre e erupção cutânea.",
         tags: "zika vírus, mosquito, prevenção",
@@ -371,4 +371,3 @@ let dataDoencas = [
     },
     
 ];
-Máculo-papular
