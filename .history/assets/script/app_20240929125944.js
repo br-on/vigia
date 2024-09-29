@@ -169,7 +169,8 @@ function removerSintomaEscolhido(sintoma) {
 
     divSintoma.textContent = sintoma.titulo_sintoma;
     divSintoma.addEventListener('click', () => adicionarSintomaEscolhido(sintoma, grupoId));
-    
+    //resultadosSintomasDiv.appendChild(divSintoma);
+
     atualizarDoencasRelacionadas();
 }
 
