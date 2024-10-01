@@ -23,10 +23,7 @@ function configurarEventosDeCliqueNosGrupos() {
     }
     // Adiciona evento de clique ao botão Voltar
     const backButton = document.querySelector('.top-1 button');
-    // verificacao
-    if (backButton) {
-        backButton.addEventListener('click', ocultarOverlay);
-    }
+    backButton.addEventListener('click', ocultarOverlay);
 }
 
 function exibirSintomasPorGrupo(grupoId) {
@@ -100,7 +97,7 @@ function pesquisar() {
     let resultadosSintomasDiv = document.getElementById("resultados-pesquisa");
     resultadosSintomasDiv.innerHTML = ""; // Limpar resultados anteriores
 
-    //verifica se o campo pesquisa está vazio
+    //verifica se o campo pesdquisa está vazio
     if (campoPesquisa.trim() === "") {
         resultadosSintomasDiv.innerHTML = "<p>Digite um sintoma para iniciar a pesquisa.</p>";
         return;

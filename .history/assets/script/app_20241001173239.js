@@ -177,27 +177,31 @@ function removerSintomaEscolhido(sintoma) {
             div.remove();
         }
     });
+    // Apenas recria o sintoma na lista se ele não estiver mais visível
+    const sintomasEncontrados = Array.from(document.querySelectorAll('.sintoma-item'));
+    const jaPresente = sintomasEncontrados.some(item => item.textContent === sintoma.titulo_sintoma);
     
-    // Reexibir o sintoma na lista de pesquisa ou na lista de grupo
-    let resultadosSintomasDiv = document.getElementById("resultados-pesquisa");
+    if (!jaPresente) {
+        // Reexibir o sintoma na lista de pesquisa ou na lista de grupo
+        let resultadosSintomasDiv = document.getElementById("resultados-pesquisa");
 
-    let divSintoma = document.createElement('div');
-    divSintoma.className = 'sintoma-item';
-    
-    let grupoId = sintoma.grupo_sintoma.toLowerCase().replace(/\s/g, '-');
-    divSintoma.style.backgroundColor = coresPorGrupo[grupoId] || '#ccc';
+        let divSintoma = document.createElement('div');
+        divSintoma.className = 'sintoma-item';
+        
+        let grupoId = sintoma.grupo_sintoma.toLowerCase().replace(/\s/g, '-');
+        divSintoma.style.backgroundColor = coresPorGrupo[grupoId] || '#ccc';
 
-    divSintoma.textContent = sintoma.titulo_sintoma;
-    divSintoma.addEventListener('click', () => adicionarSintomaEscolhido(sintoma, grupoId));
+        divSintoma.textContent = sintoma.titulo_sintoma;
+        divSintoma.addEventListener('click', () => adicionarSintomaEscolhido(sintoma, grupoId));
+        
+        let sintomasEncontrados = document.querySelectorAll('.sintoma-item');
 
-    let sintomasEncontrados = document.querySelectorAll('.sintoma-item');
-
-    sintomasEncontrados.forEach(item => {
-        if (item.textContent === sintoma.titulo_sintoma) {
-            item.classList.remove('selecionado');
-        }
-    });
-
+        sintomasEncontrados.forEach(item => {
+            if (item.textContent === sintoma.titulo_sintoma) {
+                item.classList.remove('selecionado');
+            }
+        });
+    }
     atualizarDoencasRelacionadas();
 }
 

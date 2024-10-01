@@ -89,6 +89,7 @@ function mostrarGrupos() {
     document.getElementById('resultados-pesquisa').style.display = 'none';
     document.getElementById('grupos-sintomas').style.display = 'block';
     document.getElementById('campo-pesquisa').value = ""; // para limpar quando for pra grupo
+    document.getElementsByClassName('overlay-div').style.display = 'none'
 }
 
 function pesquisar() {

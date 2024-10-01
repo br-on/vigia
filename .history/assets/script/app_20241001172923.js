@@ -169,37 +169,39 @@ function adicionarSintomaEscolhido(sintoma, grupoId) {
 }
 
 function removerSintomaEscolhido(sintoma) {
-    let sintomasEscolhidosDiv = document.getElementById("sintomas-escolhidos");
+    const sintomasEscolhidosDiv = document.getElementById("sintomas-escolhidos");
 
-    // Encontrar e remover o sintoma da lista de escolhidos
-    Array.from(sintomasEscolhidosDiv.children).forEach(div => {
-        if (div.textContent === sintoma.titulo_sintoma) {
-            div.remove();
-        }
-    });
-    
+    // Encontrar o sintoma correspondente e remover diretamente
+    const sintomaEscolhido = sintomasEscolhidosDiv.querySelector(`div:contains('${sintoma.titulo_sintoma}')`);
+    if (sintomaEscolhido) {
+        sintomaEscolhido.remove();
+    }
+
     // Reexibir o sintoma na lista de pesquisa ou na lista de grupo
-    let resultadosSintomasDiv = document.getElementById("resultados-pesquisa");
-
-    let divSintoma = document.createElement('div');
-    divSintoma.className = 'sintoma-item';
+    const resultadosSintomasDiv = document.getElementById("resultados-pesquisa");
+    const grupoId = sintoma.grupo_sintoma.toLowerCase().replace(/\s/g, '-');
     
-    let grupoId = sintoma.grupo_sintoma.toLowerCase().replace(/\s/g, '-');
-    divSintoma.style.backgroundColor = coresPorGrupo[grupoId] || '#ccc';
+    // Procurar o sintoma correspondente já presente na lista de resultados (evitar recriação)
+    const sintomaItemExistente = resultadosSintomasDiv.querySelector(`.sintoma-item:contains('${sintoma.titulo_sintoma}')`);
+    
+    if (sintomaItemExistente) {
+        sintomaItemExistente.classList.remove('selecionado');
+    } else {
+        // Se não encontrado, recriar o elemento e adicionar
+        const divSintoma = document.createElement('div');
+        divSintoma.className = 'sintoma-item';
+        divSintoma.style.backgroundColor = coresPorGrupo[grupoId] || '#ccc';
+        divSintoma.textContent = sintoma.titulo_sintoma;
+        
+        divSintoma.addEventListener('click', () => adicionarSintomaEscolhido(sintoma, grupoId));
+        
+        resultadosSintomasDiv.appendChild(divSintoma);
+    }
 
-    divSintoma.textContent = sintoma.titulo_sintoma;
-    divSintoma.addEventListener('click', () => adicionarSintomaEscolhido(sintoma, grupoId));
-
-    let sintomasEncontrados = document.querySelectorAll('.sintoma-item');
-
-    sintomasEncontrados.forEach(item => {
-        if (item.textContent === sintoma.titulo_sintoma) {
-            item.classList.remove('selecionado');
-        }
-    });
-
+    // Atualizar doenças relacionadas após a remoção
     atualizarDoencasRelacionadas();
 }
+
 
 function atualizarDoencasRelacionadas() {
     // Captura os sintomas escolhidos como um array de strings

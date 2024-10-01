@@ -44,7 +44,7 @@ main {
     flex: 1;
     margin-top: 25px;
     padding-left: 10px;
-    padding-right: 10px;
+    padding-right: 100px;
 }
 
 h1, h2 {
@@ -281,10 +281,9 @@ footer p a:hover {
 }
 
 #sintomas-escolhidos {
-    display: flex;
+    display: inline-flex;
     flex-wrap: wrap;
     margin-top: 20px;
-    margin-right: 10px;
 }
 
 /*aqui*/
